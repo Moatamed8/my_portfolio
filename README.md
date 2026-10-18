@@ -18,13 +18,13 @@ A modern and responsive **Flutter Portfolio Website** showcasing my skills, proj
 ### 🌞 Light Mode
 
 <p align="center">
-  <img src="assets/imgs/light-mode.png" width="800" alt="Portfolio Light Mode">
+  <img src="assets/imgs/light_mode.png" width="800" alt="Portfolio Light Mode">
 </p>
 
 ### 🌙 Dark Mode
 
 <p align="center">
-  <img src="assets/imgs/dark-mode.png" width="800" alt="Portfolio Dark Mode">
+  <img src="assets/imgs/dark_mode.png" width="800" alt="Portfolio Dark Mode">
 </p>
 
 ## 🛠️ Built With
