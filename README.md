@@ -1,16 +1,116 @@
-# This is a Portfolio website.
+# 🚀 My Portfolio
 
-- [x] This portfolio website has both dark and light.
-       
-| <img src='https://user-images.githubusercontent.com/33403844/195586495-5c70d3de-e04f-4ef2-89b7-480053cddae1.png' width='500'>|<img src='https://user-images.githubusercontent.com/33403844/195587025-cf491027-cb3f-42d7-b6ca-fda6685ea489.png' width='500'> |
-|:---:|--------|
+A modern and responsive **Flutter Portfolio Website** showcasing my skills, projects, experience, and professional profile.
 
-- [x] Works on all desktops, tablets and mobiles
+## ✨ Features
+
+- 🌙 **Dark & Light Mode**
+- 📱 **Fully Responsive Design**
+- 💻 Works across **Desktop, Tablet, and Mobile**
+- 🎨 Clean and modern UI
+- ⚡ Built with **Flutter**
+- 📂 Projects showcase
+- 👨‍💻 About Me section
+- 📞 Contact & social media links
+
+## 🖥️ Screenshots
+
+### 🌞 Light Mode
+
+<p align="center">
+  <img src="assets/imgs/light-mode.png" width="800" alt="Portfolio Light Mode">
+</p>
+
+### 🌙 Dark Mode
+
+<p align="center">
+  <img src="assets/imgs/dark-mode.png" width="800" alt="Portfolio Dark Mode">
+</p>
+
+## 🛠️ Built With
+
+- **Flutter**
+- **Dart**
+- **Responsive UI**
+- **Git & GitHub**
+
+## 📱 Responsive Design
+
+The portfolio is designed to provide a consistent experience across different screen sizes:
+
+- 🖥️ Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📟 Tablet
 
 
 
-### connect with me
- > Social Media Links ⚡    
+## 🚀 Getting Started
 
-|[<img src='https://user-images.githubusercontent.com/33403844/152123929-555a6daf-8ee7-4b60-a713-1d41b2ba7626.png' width='90'>](https://www.facebook.com/sudeshnb)                |[<img src='https://user-images.githubusercontent.com/33403844/152124766-bea2d123-1e58-4664-9be5-10bf90f6fa13.png' width='90'>](https://www.linkedin.com/in/sudesh-nishshanka-bandara-81b1a0175/)                          |[<img src='https://user-images.githubusercontent.com/33403844/152124261-314aa5f5-1661-42fa-a520-4c439f0afe39.png' width='90'>](https://www.youtube.com/channel/UCXooUY2oL_eqGhTaZn-ExSg)                         |[<img src='https://user-images.githubusercontent.com/33403844/152124766-bea2d123-1e58-4664-9be5-10bf90f6fa13.png' width='90'>](https://www.linkedin.com/in/sudesh-nishshanka-bandara-81b1a0175/) |[<img src='https://user-images.githubusercontent.com/33403844/152124834-3c2f22cd-4e90-447c-8ea3-cbc06f5306d2.png' width='30'>](https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvkXFgPlnbqWvNTVVtpCgpgmNpntTSctVHgdqlngkMnbsSVRSRdMRzPQJvZgTNcmLRTdfg) |[<img src='https://user-images.githubusercontent.com/33403844/152126929-ac1f3e58-2403-44e6-8fb3-0b8d84378aba.png' width='30'>](https://play.google.com/store/apps/dev?id=8325933715003989756)           |[<img src='https://user-images.githubusercontent.com/33403844/152129174-df9329aa-62b4-4317-9b4a-b1f1197e1385.png' width='40'>](https://www.fiverr.com/sudeshnb) |
-|----------------|-------------------------------|-----------------------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|
+### Prerequisites
+
+Make sure you have Flutter installed on your machine.
+
+Check your Flutter installation:
+
+```bash
+flutter doctor
+```
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Moatamed8/my_portfolio.git
+```
+
+Navigate to the project:
+
+```bash
+cd my_portfolio
+```
+
+Install dependencies:
+
+```bash
+flutter pub get
+```
+
+Run the project:
+
+```bash
+flutter run
+```
+
+## 🌐 Build for Web
+
+To build the portfolio for production:
+
+```bash
+flutter build web
+```
+
+The generated web application will be available inside:
+
+```text
+build/web/
+```
+
+## 📬 Connect With Me
+
+Feel free to connect with me through my social platforms:
+
+- 💼 **LinkedIn:** (https://www.linkedin.com/in/moatamed-wageh)
+- 📧 **Email:**  (metmedelbana@gmail.com)
+- 🐙 **GitHub:** [Moatamed8](https://github.com/Moatamed8)
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
+
+---
+
+<p align="center">
+  Made with ❤️ using Flutter
+</p>
