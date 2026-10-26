@@ -13,15 +13,19 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = Responsive.isMobile(context);
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: isMobile ? 22 : 0, vertical: 30),
+      padding: EdgeInsets.symmetric(
+        horizontal: isMobile ? 22 : 0,
+        vertical: 30,
+      ),
       decoration: BoxDecoration(
         border: Border(top: BorderSide(color: context.border)),
       ),
-      child: Flex(
-        direction: isMobile ? Axis.vertical : Axis.horizontal,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment:
-            isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.center,
+      child: Wrap(
+        alignment: isMobile ? WrapAlignment.center : WrapAlignment.spaceBetween,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        runAlignment: isMobile ? WrapAlignment.center : WrapAlignment.start,
+        spacing: 16,
+        runSpacing: 14,
         children: [
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -44,12 +48,10 @@ class Footer extends StatelessWidget {
               ),
             ],
           ),
-          if (isMobile) const SizedBox(height: 14),
           Text(
             'Built with Flutter 💙',
             style: TextStyle(fontSize: 13.5, color: context.muted),
           ),
-          if (isMobile) const SizedBox(height: 14),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [

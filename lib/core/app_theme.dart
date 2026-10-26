@@ -8,20 +8,20 @@ class AppTheme {
   static const String _font = 'Poppins';
 
   static ThemeData get dark => _base(
-        brightness: Brightness.dark,
-        scaffold: AppColors.darkBg,
-        surface: AppColors.darkSurface,
-        text: AppColors.darkText,
-        muted: AppColors.darkMuted,
-      );
+    brightness: Brightness.dark,
+    scaffold: AppColors.darkBg,
+    surface: AppColors.darkSurface,
+    text: AppColors.darkText,
+    muted: AppColors.darkMuted,
+  );
 
   static ThemeData get light => _base(
-        brightness: Brightness.light,
-        scaffold: AppColors.lightBg,
-        surface: AppColors.lightSurface,
-        text: AppColors.lightText,
-        muted: AppColors.lightMuted,
-      );
+    brightness: Brightness.light,
+    scaffold: AppColors.lightBg,
+    surface: AppColors.lightSurface,
+    text: AppColors.lightText,
+    muted: AppColors.lightMuted,
+  );
 
   static ThemeData _base({
     required Brightness brightness,
@@ -48,16 +48,20 @@ class AppTheme {
   }
 
   static TextTheme _textTheme(TextTheme base, Color text, Color muted) {
-    TextStyle s(double size, FontWeight weight,
-            {double? height, double? spacing, Color? color}) =>
-        TextStyle(
-          fontFamily: _font,
-          fontSize: size,
-          fontWeight: weight,
-          height: height,
-          letterSpacing: spacing,
-          color: color ?? text,
-        );
+    TextStyle s(
+      double size,
+      FontWeight weight, {
+      double? height,
+      double? spacing,
+      Color? color,
+    }) => TextStyle(
+      fontFamily: _font,
+      fontSize: size,
+      fontWeight: weight,
+      height: height,
+      letterSpacing: spacing,
+      color: color ?? text,
+    );
 
     return base
         .copyWith(

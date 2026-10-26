@@ -55,8 +55,15 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
+    - assets/images/profile.jpeg
     - assets/icons/
+    - assets/projects/luxury_health/
+    - assets/projects/trade_off/
+    - assets/projects/qlines/
+    - assets/projects/essaly/
+    - assets/projects/2rbly/
+    - assets/projects/2rbly_driver/
+    - assets/projects/2rbly_partner/
 
   fonts:
     - family: Poppins

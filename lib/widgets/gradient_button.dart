@@ -104,9 +104,7 @@ class _OutlineButtonState extends State<OutlineButton> {
             color: _hover ? color.withValues(alpha: 0.06) : Colors.transparent,
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
-              color: _hover
-                  ? AppColors.accent
-                  : context.border,
+              color: _hover ? AppColors.accent : context.border,
               width: 1.4,
             ),
           ),

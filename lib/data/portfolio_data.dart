@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../domain/entities/content.dart';
+import '../domain/entities/project.dart';
+
+export '../domain/entities/content.dart';
+export '../domain/entities/project.dart';
+
 /// Central place for every piece of personal content shown on the site.
 /// Update values here to change the whole portfolio.
 class PortfolioData {
@@ -9,65 +15,67 @@ class PortfolioData {
   static const String name = 'Moatamed Wageh';
   static const String firstName = 'Moatamed';
   static const String role = 'Mobile Application Developer';
-  static const String greeting = "Hi there, welcome to my space";
+  static const String greeting = "Hi there, welcome to my portfolio";
 
   static const List<String> roles = [
-    'Mobile Application Developer',
-    'Flutter Engineer',
-    'iOS & Android Developer',
-    'Software Engineer',
+    'Senior Mobile Developer',
+    'Senior Software Engineer',
   ];
 
   static const String heroTagline =
-      'I craft fast, elegant and reliable mobile experiences. '
-      'Freelancer providing services for programming and design needs — '
-      "let's build something great together.";
+      'I’m a Senior Flutter Developer who turns ideas into polished, '
+      'production-ready mobile apps — with a focus on clean architecture, '
+      'performance, and great user experiences.';
 
   // --- About ---
   static const String aboutHeadline =
-      "I'm Moatamed Wageh, a Mobile App Developer";
+      "I'm Moatamed Wageh, a Senior Flutter Developer";
 
   static const String aboutBody =
-      'I graduated as a Software Engineer from Zagazig University, Egypt. '
-      "I've been developing mobile applications for over 3 years, working with "
-      'multiple startups to launch their products and gaining valuable, '
-      'hands-on experience along the way. I currently work as an Associate '
-      'Software Engineer at Onyxsio (Sri Lanka), building polished, '
-      'production-grade apps with Flutter.';
+      'I graduated with a Bachelor of Computer Science and Information Technology '
+      'from Zagazig University, Egypt. '
+      'I have over 6 years of experience building and shipping production-ready '
+      'mobile applications with Flutter, working across e-commerce, education, '
+      'healthcare, food delivery, and marketplace products. '
+      'I specialize in building scalable, reliable apps with clean architecture, '
+      'real-time features, payment integrations, Firebase, and AI-powered experiences.';
 
   static const List<Highlight> highlights = [
-    Highlight(value: '3+', label: 'Years of Experience'),
-    Highlight(value: '15+', label: 'Projects Delivered'),
-    Highlight(value: '4+', label: 'Apps in Stores'),
-    Highlight(value: '∞', label: 'Cups of Coffee'),
+    Highlight(value: '6+', label: 'Years of Experience'),
+    Highlight(value: '30+', label: 'Projects Delivered'),
+    Highlight(value: '20+', label: 'Apps in Stores'),
   ];
 
   static const List<String> skills = [
     'Flutter',
     'Dart',
-    'iOS',
+    'Flutter Flavors',
     'Android',
-    'Firebase',
-    'REST APIs',
+    'iOS',
     'State Management',
     'Clean Architecture',
-    'CI/CD',
-    'Git',
-    'UI/UX',
+    'REST APIs',
+    'Firebase',
+    'Real-Time Apps',
+    'WebRTC',
+    'Payment Integration',
+    'Platform Channels',
+    'App Lifecycle',
     'AI Integration',
+    'CI/CD',
+    'Git & GitHub',
   ];
-
   // --- Contact ---
   static const String phoneDisplay = '+20 128 858 4664';
 
   // --- Links ---
   static const String resume =
-      'https://drive.google.com/file/d/1TMId1ZW3_Op3zsqXuVuEiGcTG7c4go1c/view?usp=sharing';
+      "https://drive.google.com/drive/folders/11W6E9Ng2HkRONMFeNT1UN46BmUJEmrgm?usp=sharing";
   static const String gitHub = 'https://github.com/Moatamed8';
   static const String facebook = 'https://www.facebook.com/moatamed.elbana/';
   static const String twitter = 'https://twitter.com/MoatamedElbana';
   static const String linkedin =
-      'https://www.linkedin.com/in/moatamed-wageh-69a48b112/';
+      'https://www.linkedin.com/in/moatamed-wageh/';
   static const String instagram = 'https://www.instagram.com/m3tmed_wageh/';
   static const String freelancer = 'https://www.freelancer.com/u/Moatamed8';
   static const String whatsapp =
@@ -79,16 +87,30 @@ class PortfolioData {
   static const List<SocialLink> socials = [
     SocialLink(label: 'GitHub', url: gitHub, icon: Icons.code_rounded),
     SocialLink(
-        label: 'LinkedIn', url: linkedin, icon: Icons.business_center_rounded),
+      label: 'LinkedIn',
+      url: linkedin,
+      icon: Icons.business_center_rounded,
+    ),
     SocialLink(label: 'WhatsApp', url: whatsapp, icon: Icons.chat_rounded),
     SocialLink(label: 'Twitter', url: twitter, icon: Icons.alternate_email),
     SocialLink(
-        label: 'Instagram', url: instagram, icon: Icons.camera_alt_rounded),
+      label: 'Instagram',
+      url: instagram,
+      icon: Icons.camera_alt_rounded,
+    ),
     SocialLink(label: 'Facebook', url: facebook, icon: Icons.facebook_rounded),
     SocialLink(label: 'Freelancer', url: freelancer, icon: Icons.work_rounded),
   ];
 
   static const List<Service> services = [
+    Service(
+      name: 'Flutter Development',
+      icon: 'assets/icons/apple.svg',
+      description:
+          'Smooth, native-feeling iOS apps delivered to the App Store with '
+          'a single, maintainable codebase.',
+      tools: ['Flutter', 'Swift'],
+    ),
     Service(
       name: 'AI Development',
       icon: 'assets/icons/ai.svg',
@@ -105,110 +127,136 @@ class PortfolioData {
           'native code where it counts.',
       tools: ['Flutter', 'Android (Java)'],
     ),
-    Service(
-      name: 'iOS Development',
-      icon: 'assets/icons/apple.svg',
-      description:
-          'Smooth, native-feeling iOS apps delivered to the App Store with '
-          'a single, maintainable codebase.',
-      tools: ['Flutter', 'Swift'],
-    ),
-    Service(
-      name: 'Web Development',
-      icon: 'assets/icons/website.svg',
-      description:
-          'Responsive, fast web apps and landing pages — like this very '
-          'portfolio — built with Flutter.',
-      tools: ['Flutter', 'Web'],
-    ),
   ];
 
+  /// Download labels follow the public Google Play install bracket.
+  /// Edit a value here when a store number changes.
   static const List<Project> projects = [
     Project(
       title: 'Luxury Health',
       category: 'E-commerce',
-      banner: 'assets/images/luxury_banner.png',
       icon: 'assets/icons/luxury.png',
       description:
-          'An e-commerce app providing a seamless platform for purchasing '
-          'medicines and healthcare products online — convenient, reliable '
-          'and with fast delivery.',
-      url: 'https://apps.apple.com/sa/app/trade-off/id6741512514',
+          'E-commerce application designed and developed to provide a seamless '
+          'platform for purchasing medicines and healthcare products online, '
+          'ensuring convenience, reliability, and fast delivery.',
+      images: [
+        'assets/projects/luxury_health/image_1.webp',
+        'assets/projects/luxury_health/image_2.webp',
+        'assets/projects/luxury_health/image_3.webp',
+      ],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.lenience.luxuryhealth',
+      appStoreUrl: 'https://apps.apple.com/app/luxury-health/id6741512514',
+      downloads: '1K+',
     ),
     Project(
       title: 'Trade Off',
       category: 'Marketplace',
-      banner: 'assets/images/tradeoff_banner.jpeg',
       icon: 'assets/icons/tradeoff.png',
       description:
-          'A marketplace app to sell, rent and exchange your stuff. It helps '
-          'you connect with people interested in buying your used items.',
-      url: 'https://apps.apple.com/sa/app/trade-off/id1631203509',
+          'Tradeoff is an application designed and developed to sell, rent, '
+          'and exchange your stuff. It helps you to communicate with people '
+          'who may be interested to buy your used stuff.',
+      images: ['assets/projects/trade_off/image_1.webp'],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.lenience.tradeoff',
+      appStoreUrl: 'https://apps.apple.com/sa/app/trade-off/id1631203509',
+      downloads: '1K+',
     ),
     Project(
       title: 'Qlines',
       category: 'EdTech',
-      banner: 'assets/images/qlines_banner.jpeg',
       icon: 'assets/icons/qlines.png',
       description:
-          'The first app in the Arab world enabling teachers and students to '
-          'excel in professional exams: licensing assessments, ability and '
-          'achievement tests.',
-      url:
-          'https://play.google.com/store/apps/details?id=com.qlines.qlinesapp',
+          'Qlines App is the first App in the Arab world to enable teachers '
+          'and students to achieve an excellent level in their professional '
+          'examinations; licensing assessments, ability tests, and achievement '
+          'tests.',
+      images: ['assets/projects/qlines/image_1.webp'],
+      googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.qlines',
+      appStoreUrl:
+          'https://apps.apple.com/sa/app/qlines-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D9%83%D9%8A%D9%88%D9%84%D8%A7%D9%8A%D9%86%D8%B2/id6736682146',
+      downloads: '1K+',
     ),
     Project(
       title: 'Essaly',
       category: 'Platform',
-      banner: 'assets/images/essaly_banner.jpeg',
       icon: 'assets/icons/essaly.png',
       description:
-          'An electronic platform packed with services that benefit both shop '
-          'owners and consumers, all in one place.',
-      url: 'https://apps.apple.com/sa/app/essaly/id1566713714',
+          'Essaly is an electronic platform that contains a lot of electronic '
+          'services that can benefit the owners of the shops and consumers.',
+      images: [
+        'assets/projects/essaly/image_1.webp',
+        'assets/projects/essaly/image_2.webp',
+        'assets/projects/essaly/image_3.webp',
+      ],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.essalyapp',
+      appStoreUrl: 'https://apps.apple.com/sa/app/essaly/id1566713714',
+      downloads: '1K+',
+    ),
+    Project(
+      title: '2rbly',
+      category: 'Food & Drink',
+      icon: 'assets/projects/2rbly/icon.webp',
+      description:
+          'A user-facing food delivery application that allows customers to '
+          'discover nearby restaurants, browse menus, and order their favorite '
+          'meals with ease. The app also supports custom shopping requests, '
+          'enabling users to request specific items and have delivery partners '
+          'purchase and deliver them. It provides a seamless ordering '
+          'experience with real-time order tracking and convenient delivery '
+          'management.',
+      images: [
+        'assets/projects/2rbly/image_1.webp',
+        'assets/projects/2rbly/image_2.webp',
+        'assets/projects/2rbly/image_3.webp',
+      ],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.Qrbly.customer',
+      appStoreUrl:
+          'https://apps.apple.com/eg/app/2rbly-%D9%82%D8%B1%D8%A8%D9%84%D9%8A/id1602011671',
+      downloads: '20K+',
+    ),
+    Project(
+      title: '2rbly - Delivery',
+      category: 'Food & Drink',
+      icon: 'assets/projects/2rbly/icon.webp',
+      description:
+          'A delivery partner application designed to help drivers efficiently '
+          'manage and fulfill delivery orders in real time. Delivery partners '
+          'can track active and completed orders, monitor their earnings and '
+          'performance, view customer ratings, and access detailed insights '
+          'into their delivery activities through a centralized dashboard.',
+      images: [
+        'assets/projects/2rbly_driver/image_1.webp',
+        'assets/projects/2rbly_driver/image_2.webp',
+      ],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.qrbly.delivery',
+      appStoreUrl: 'https://apps.apple.com/eg/app/2rbly-delivery/id1603425039',
+      downloads: '10+',
+    ),
+    Project(
+      title: '2rbly Partner',
+      category: 'Food & Drink',
+      icon: 'assets/projects/2rbly/icon.webp',
+      description:
+          'A restaurant partner management application that enables restaurants '
+          'to manage incoming orders, assign deliveries to available delivery '
+          'partners, and maintain their digital menus. Partners can add and '
+          'manage products, create offers and features, update order statuses, '
+          'and access a wide range of tools to streamline restaurant operations '
+          'and improve order fulfillment.',
+      images: [
+        'assets/projects/2rbly_partner/image_1.webp',
+        'assets/projects/2rbly_partner/image_2.webp',
+      ],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.qrbly.vendor',
+      appStoreUrl: 'https://apps.apple.com/eg/app/2rbly-partner/id1603431879',
+      downloads: '200+',
     ),
   ];
-}
-
-class Highlight {
-  final String value;
-  final String label;
-  const Highlight({required this.value, required this.label});
-}
-
-class SocialLink {
-  final String label;
-  final String url;
-  final IconData icon;
-  const SocialLink({required this.label, required this.url, required this.icon});
-}
-
-class Service {
-  final String name;
-  final String icon;
-  final String description;
-  final List<String> tools;
-  const Service({
-    required this.name,
-    required this.icon,
-    required this.description,
-    required this.tools,
-  });
-}
-
-class Project {
-  final String title;
-  final String category;
-  final String banner;
-  final String icon;
-  final String description;
-  final String url;
-  const Project({
-    required this.title,
-    required this.category,
-    required this.banner,
-    required this.icon,
-    required this.description,
-    required this.url,
-  });
 }

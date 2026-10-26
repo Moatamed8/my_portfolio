@@ -70,8 +70,13 @@ class ContactSection extends StatelessWidget {
                     spacing: 14,
                     runSpacing: 14,
                     children: PortfolioData.socials
-                        .map((s) => _ContactIcon(
-                            icon: s.icon, url: s.url, label: s.label))
+                        .map(
+                          (s) => _ContactIcon(
+                            icon: s.icon,
+                            url: s.url,
+                            label: s.label,
+                          ),
+                        )
                         .toList(),
                   ),
                 ],
@@ -188,8 +193,11 @@ class _ContactIcon extends StatefulWidget {
   final IconData icon;
   final String url;
   final String label;
-  const _ContactIcon(
-      {required this.icon, required this.url, required this.label});
+  const _ContactIcon({
+    required this.icon,
+    required this.url,
+    required this.label,
+  });
 
   @override
   State<_ContactIcon> createState() => _ContactIconState();

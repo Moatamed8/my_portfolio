@@ -50,7 +50,9 @@ class _HeroText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = Responsive.isMobile(context);
-    final align = isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start;
+    final align = isMobile
+        ? CrossAxisAlignment.center
+        : CrossAxisAlignment.start;
     final textAlign = isMobile ? TextAlign.center : TextAlign.start;
 
     return Column(
@@ -68,12 +70,14 @@ class _HeroText extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text('👋  ', style: TextStyle(fontSize: 14)),
-              Text(
-                PortfolioData.greeting,
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500,
-                  color: context.muted,
+              Flexible(
+                child: Text(
+                  PortfolioData.greeting,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color: context.muted,
+                  ),
                 ),
               ),
             ],
@@ -147,7 +151,11 @@ class _SocialDot extends StatefulWidget {
   final IconData icon;
   final String url;
   final String label;
-  const _SocialDot({required this.icon, required this.url, required this.label});
+  const _SocialDot({
+    required this.icon,
+    required this.url,
+    required this.label,
+  });
 
   @override
   State<_SocialDot> createState() => _SocialDotState();
@@ -240,11 +248,14 @@ class _HeroImage extends StatelessWidget {
                   errorBuilder: (_, _, _) => Container(
                     color: context.surfaceAlt,
                     alignment: Alignment.center,
-                    child: const Text('MW',
-                        style: TextStyle(
-                            fontSize: 48,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
+                    child: const Text(
+                      'MW',
+                      style: TextStyle(
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ),

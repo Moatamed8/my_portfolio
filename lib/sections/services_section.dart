@@ -13,7 +13,12 @@ class ServicesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = Responsive.isMobile(context);
-    final crossAxisCount = Responsive.value(context, mobile: 1, tablet: 2, desktop: 2);
+    final crossAxisCount = Responsive.value(
+      context,
+      mobile: 1,
+      tablet: 2,
+      desktop: 2,
+    );
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: isMobile ? 22 : 0),
@@ -29,26 +34,28 @@ class ServicesSection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 48),
-          LayoutBuilder(builder: (context, c) {
-            const gap = 20.0;
-            final width = crossAxisCount == 1
-                ? c.maxWidth
-                : (c.maxWidth - gap * (crossAxisCount - 1)) / crossAxisCount;
-            return Wrap(
-              spacing: gap,
-              runSpacing: gap,
-              children: [
-                for (var i = 0; i < PortfolioData.services.length; i++)
-                  SizedBox(
-                    width: width,
-                    child: RevealOnScroll(
-                      delay: Duration(milliseconds: 80 * i),
-                      child: _ServiceCard(service: PortfolioData.services[i]),
+          LayoutBuilder(
+            builder: (context, c) {
+              const gap = 20.0;
+              final width = crossAxisCount == 1
+                  ? c.maxWidth
+                  : (c.maxWidth - gap * (crossAxisCount - 1)) / crossAxisCount;
+              return Wrap(
+                spacing: gap,
+                runSpacing: gap,
+                children: [
+                  for (var i = 0; i < PortfolioData.services.length; i++)
+                    SizedBox(
+                      width: width,
+                      child: RevealOnScroll(
+                        delay: Duration(milliseconds: 80 * i),
+                        child: _ServiceCard(service: PortfolioData.services[i]),
+                      ),
                     ),
-                  ),
-              ],
-            );
-          }),
+                ],
+              );
+            },
+          ),
         ],
       ),
     );
@@ -79,7 +86,9 @@ class _ServiceCardState extends State<_ServiceCard> {
           color: context.surface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: _hover ? AppColors.accent.withValues(alpha: 0.5) : context.border,
+            color: _hover
+                ? AppColors.accent.withValues(alpha: 0.5)
+                : context.border,
           ),
           boxShadow: _hover
               ? [
@@ -104,8 +113,10 @@ class _ServiceCardState extends State<_ServiceCard> {
               padding: const EdgeInsets.all(14),
               child: SvgPicture.asset(
                 widget.service.icon,
-                colorFilter:
-                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
             const SizedBox(height: 20),
@@ -127,22 +138,26 @@ class _ServiceCardState extends State<_ServiceCard> {
               spacing: 8,
               runSpacing: 8,
               children: widget.service.tools
-                  .map((t) => Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 11, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: AppColors.accent.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(8),
+                  .map(
+                    (t) => Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 11,
+                        vertical: 6,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.accent.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        t,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.accent,
                         ),
-                        child: Text(
-                          t,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.accent,
-                          ),
-                        ),
-                      ))
+                      ),
+                    ),
+                  )
                   .toList(),
             ),
           ],

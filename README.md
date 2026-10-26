@@ -21,16 +21,11 @@ optimized images, and a clean single-page layout.
 ```
 lib/
 ├── main.dart                 # App entry, theme state, splash removal
-├── core/
-│   ├── app_colors.dart       # Brand palette + theme color extensions
-│   ├── app_theme.dart        # Light & dark ThemeData (Poppins)
-│   ├── theme_controller.dart # InheritedWidget for theme toggle
-│   ├── responsive.dart       # Breakpoints & helpers
-│   ├── utils.dart            # openUrl helper
-│   └── splash/               # Conditional splash-screen remover (web/stub)
+├── core/                     # Theme, breakpoints, links, splash
+├── domain/entities/          # Project and other content models
 ├── data/
 │   └── portfolio_data.dart   # ALL content lives here — edit this file
-├── widgets/                  # Reusable UI (buttons, headers, reveal, etc.)
+├── widgets/                  # Reusable UI, including project cards
 ├── sections/                 # Page sections + navbar/footer
 └── screens/
     └── home_screen.dart      # Layout + scroll navigation
@@ -40,7 +35,10 @@ lib/
 
 Everything personal (name, bio, projects, services, social links, CV link)
 is in **`lib/data/portfolio_data.dart`**. Update values there.
-Images live in `assets/images/`, icons in `assets/icons/`.
+
+Project screenshots are optimized WebP files under `assets/projects/<name>/`.
+A project can list one image or several; several become a carousel. Icons
+live in `assets/icons/`, and the profile photo is `assets/images/profile.jpeg`.
 
 ## Run locally
 

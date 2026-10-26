@@ -78,12 +78,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<NavItem> get _navItems => [
-        NavItem('Home', () => _scrollTo(_homeKey)),
-        NavItem('About', () => _scrollTo(_aboutKey)),
-        NavItem('Services', () => _scrollTo(_servicesKey)),
-        NavItem('Work', () => _scrollTo(_workKey)),
-        NavItem('Contact', () => _scrollTo(_contactKey)),
-      ];
+    NavItem('Home', () => _scrollTo(_homeKey)),
+    NavItem('About', () => _scrollTo(_aboutKey)),
+    NavItem('Services', () => _scrollTo(_servicesKey)),
+    NavItem('Work', () => _scrollTo(_workKey)),
+    NavItem('Contact', () => _scrollTo(_contactKey)),
+  ];
 
   /// Invisible anchor that doubles as scroll-margin so content lands below the
   /// floating navbar (like CSS `scroll-margin-top`).
@@ -167,6 +167,8 @@ class _SmoothScrollBehavior extends MaterialScrollBehavior {
 
   @override
   Widget buildOverscrollIndicator(
-          BuildContext context, Widget child, ScrollableDetails details) =>
-      child;
+    BuildContext context,
+    Widget child,
+    ScrollableDetails details,
+  ) => child;
 }

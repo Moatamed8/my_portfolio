@@ -89,8 +89,7 @@ class _Cursor extends StatefulWidget {
   State<_Cursor> createState() => _CursorState();
 }
 
-class _CursorState extends State<_Cursor>
-    with SingleTickerProviderStateMixin {
+class _CursorState extends State<_Cursor> with SingleTickerProviderStateMixin {
   late final AnimationController _c = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 600),

@@ -4,8 +4,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:new_portfolio/main.dart';
 
 void main() {
-  testWidgets('renders the hero name (mobile layout)',
-      (WidgetTester tester) async {
+  testWidgets('renders the hero name (mobile layout)', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const PortfolioApp());
     await tester.pump(const Duration(milliseconds: 100));
 
@@ -16,8 +17,9 @@ void main() {
     await tester.pumpWidget(const SizedBox());
   });
 
-  testWidgets('desktop layout renders without layout exceptions',
-      (WidgetTester tester) async {
+  testWidgets('desktop layout renders without layout exceptions', (
+    WidgetTester tester,
+  ) async {
     tester.view.physicalSize = const Size(1440, 1400);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);

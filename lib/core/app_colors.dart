@@ -35,8 +35,7 @@ class AppColors {
 extension ThemePalette on BuildContext {
   bool get isDark => Theme.of(this).brightness == Brightness.dark;
 
-  Color get surface =>
-      isDark ? AppColors.darkSurface : AppColors.lightSurface;
+  Color get surface => isDark ? AppColors.darkSurface : AppColors.lightSurface;
   Color get surfaceAlt =>
       isDark ? AppColors.darkSurfaceAlt : AppColors.lightSurfaceAlt;
   Color get textColor => isDark ? AppColors.darkText : AppColors.lightText;

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 /// Fades and slides its [child] into view the first time it becomes visible
@@ -22,16 +24,21 @@ class RevealOnScroll extends StatefulWidget {
 
 class _RevealOnScrollState extends State<RevealOnScroll>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller =
-      AnimationController(vsync: this, duration: widget.duration);
-  late final Animation<double> _opacity =
-      CurvedAnimation(parent: _controller, curve: Curves.easeOut);
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: widget.duration,
+  );
+  late final Animation<double> _opacity = CurvedAnimation(
+    parent: _controller,
+    curve: Curves.easeOut,
+  );
   late final Animation<Offset> _slide = Tween<Offset>(
     begin: Offset(0, widget.offsetY / 100),
     end: Offset.zero,
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
 
   ScrollPosition? _position;
+  Timer? _delay;
   bool _revealed = false;
 
   @override
@@ -52,7 +59,7 @@ class _RevealOnScrollState extends State<RevealOnScroll>
     if (dy < screenH * 0.9) {
       _revealed = true;
       _position?.removeListener(_onScroll);
-      Future.delayed(widget.delay, () {
+      _delay = Timer(widget.delay, () {
         if (mounted) _controller.forward();
       });
     }
@@ -60,6 +67,7 @@ class _RevealOnScrollState extends State<RevealOnScroll>
 
   @override
   void dispose() {
+    _delay?.cancel();
     _position?.removeListener(_onScroll);
     _controller.dispose();
     super.dispose();

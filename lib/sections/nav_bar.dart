@@ -239,7 +239,11 @@ class _HireButtonState extends State<_HireButton> {
 class BackdropFiltered extends StatelessWidget {
   final bool enabled;
   final Widget child;
-  const BackdropFiltered({super.key, required this.enabled, required this.child});
+  const BackdropFiltered({
+    super.key,
+    required this.enabled,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -287,8 +291,11 @@ class MobileDrawer extends StatelessWidget {
                     color: context.textColor,
                   ),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios_rounded,
-                    size: 14, color: context.muted),
+                trailing: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  size: 14,
+                  color: context.muted,
+                ),
                 onTap: () {
                   Navigator.pop(context);
                   item.onTap();
@@ -306,7 +313,8 @@ class MobileDrawer extends StatelessWidget {
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   icon: const Icon(Icons.chat_rounded, size: 18),
                   label: const Text('Hire Me'),

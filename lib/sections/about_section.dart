@@ -27,11 +27,7 @@ class AboutSection extends StatelessWidget {
             delay: const Duration(milliseconds: 120),
             child: isMobile
                 ? Column(
-                    children: [
-                      _Stats(),
-                      const SizedBox(height: 32),
-                      _Bio(),
-                    ],
+                    children: [_Stats(), const SizedBox(height: 32), _Bio()],
                   )
                 : Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
