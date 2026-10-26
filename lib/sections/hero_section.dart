@@ -268,7 +268,7 @@ class _HeroImage extends StatelessWidget {
             const Positioned(
               bottom: 20,
               left: 0,
-              child: _FloatingBadge(label: '3+ yrs', emoji: '🚀'),
+              child: _FloatingBadge(label: '6+ yrs', emoji: '👨‍💻'),
             ),
           ],
         ),

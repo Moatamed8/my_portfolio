@@ -105,27 +105,46 @@ class PortfolioData {
   static const List<Service> services = [
     Service(
       name: 'Flutter Development',
-      icon: 'assets/icons/apple.svg',
+      icon: 'assets/icons/flutter.svg',
       description:
-          'Smooth, native-feeling iOS apps delivered to the App Store with '
-          'a single, maintainable codebase.',
-      tools: ['Flutter', 'Swift'],
-    ),
-    Service(
-      name: 'AI Development',
-      icon: 'assets/icons/ai.svg',
-      description:
-          'Interested in bringing AI into your product? I integrate modern '
-          'AI models and agents to make your app smarter.',
-      tools: ['AI Agents', 'Hugging Face', 'Replicate', 'Cog'],
+      'Build scalable, high-performance cross-platform mobile applications '
+          'for iOS and Android using Flutter and a clean, maintainable codebase.',
+      tools: [
+        'Flutter',
+        'Dart',
+        'Bloc',
+        'Riverpod',
+        'Provider',
+        'Clean Architecture',
+      ],
     ),
     Service(
       name: 'Android Development',
       icon: 'assets/icons/android.svg',
       description:
-          'High-performance, beautiful Android apps built with Flutter and '
-          'native code where it counts.',
-      tools: ['Flutter', 'Android (Java)'],
+      'Develop reliable Android applications using Flutter and native '
+          'Android technologies, with a focus on performance and user experience.',
+      tools: [
+        'Flutter',
+        'Android',
+        'Java',
+        'Gradle',
+        'Maven',
+      ],
+    ),
+    Service(
+      name: 'AI Development',
+      icon: 'assets/icons/ai.svg',
+      description:
+      'Integrate AI-powered features into mobile applications to create '
+          'smarter, more engaging, and practical user experiences.',
+      tools: [
+        'AI Integration',
+        'AI Agents',
+        'Machine Learning',
+        'TensorFlow',
+        'Hugging Face',
+      ],
     ),
   ];
 

@@ -20,10 +20,10 @@ class ContactSection extends StatelessWidget {
           const RevealOnScroll(
             child: SectionHeader(
               eyebrow: 'Contact',
-              title: 'Get in touch',
+              title: 'Let’s build something together',
               subtitle:
-                  "Have a project in mind or just want to say hi? "
-                  "I'm always open to discussing new ideas.",
+              "Have a project, an idea, or an opportunity in mind? "
+                  "I'd love to hear about it and discuss how I can help.",
             ),
           ),
           const SizedBox(height: 44),
@@ -98,7 +98,7 @@ class _ContactCopy extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Let's try my service now!",
+          "Let's work together!",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w700,
@@ -108,8 +108,9 @@ class _ContactCopy extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Text(
-          "Let's work together and make everything super useful. "
-          "Tap below and let's get started.",
+          "Let's work together to turn your idea into a useful, "
+              "reliable, and polished product. "
+              "Tap below and let's get started.",
           style: TextStyle(
             color: Colors.white.withValues(alpha: 0.9),
             fontSize: 15,
