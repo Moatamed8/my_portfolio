@@ -74,8 +74,7 @@ class PortfolioData {
   static const String gitHub = 'https://github.com/Moatamed8';
   static const String facebook = 'https://www.facebook.com/moatamed.elbana/';
   static const String twitter = 'https://twitter.com/MoatamedElbana';
-  static const String linkedin =
-      'https://www.linkedin.com/in/moatamed-wageh/';
+  static const String linkedin = 'https://www.linkedin.com/in/moatamed-wageh/';
   static const String instagram = 'https://www.instagram.com/m3tmed_wageh/';
   static const String freelancer = 'https://www.freelancer.com/u/Moatamed8';
   static const String whatsapp =
@@ -107,7 +106,7 @@ class PortfolioData {
       name: 'Flutter Development',
       icon: 'assets/icons/flutter.svg',
       description:
-      'Build scalable, high-performance cross-platform mobile applications '
+          'Build scalable, high-performance cross-platform mobile applications '
           'for iOS and Android using Flutter and a clean, maintainable codebase.',
       tools: [
         'Flutter',
@@ -122,21 +121,15 @@ class PortfolioData {
       name: 'Android Development',
       icon: 'assets/icons/android.svg',
       description:
-      'Develop reliable Android applications using Flutter and native '
+          'Develop reliable Android applications using Flutter and native '
           'Android technologies, with a focus on performance and user experience.',
-      tools: [
-        'Flutter',
-        'Android',
-        'Java',
-        'Gradle',
-        'Maven',
-      ],
+      tools: ['Flutter', 'Android', 'Java', 'Gradle', 'Maven'],
     ),
     Service(
       name: 'AI Development',
       icon: 'assets/icons/ai.svg',
       description:
-      'Integrate AI-powered features into mobile applications to create '
+          'Integrate AI-powered features into mobile applications to create '
           'smarter, more engaging, and practical user experiences.',
       tools: [
         'AI Integration',
@@ -151,6 +144,26 @@ class PortfolioData {
   /// Download labels follow the public Google Play install bracket.
   /// Edit a value here when a store number changes.
   static const List<Project> projects = [
+    Project(
+      title: 'Bokidz',
+      category: 'Kids',
+      icon: 'assets/icons/bokidz.png',
+      description:
+          'Bokidz is a children\'s application that provides a safe and '
+          'entertaining user experience for your child. The application offers '
+          'a variety of games and educational activities that help children '
+          'learn essential skills such as reading, writing, and math in a fun '
+          'and interactive way. Bokidz is committed to safety and privacy '
+          'standards, providing a secure environment for children.',
+      images: [
+        'assets/projects/bokidz/image_1.webp',
+        'assets/projects/bokidz/image_2.webp',
+      ],
+      googlePlayUrl:
+          'https://play.google.com/store/apps/details?id=com.lenience.bokidz&hl=en',
+      appStoreUrl: 'https://apps.apple.com/sg/app/bokidz/id6449681123',
+      downloads: '37K+',
+    ),
     Project(
       title: 'Luxury Health',
       category: 'E-commerce',

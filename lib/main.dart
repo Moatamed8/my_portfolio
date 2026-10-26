@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -5,10 +7,12 @@ import 'package:flutter/services.dart';
 import 'core/app_theme.dart';
 import 'core/splash/splash_remover.dart';
 import 'core/theme_controller.dart';
+import 'core/visit/visit_notifier.dart';
 import 'screens/home_screen.dart';
 
 void main() {
   runApp(const PortfolioApp());
+  unawaited(notifyVisit());
 }
 
 class PortfolioApp extends StatefulWidget {

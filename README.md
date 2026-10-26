@@ -47,6 +47,16 @@ flutter pub get
 flutter run -d chrome
 ```
 
+Opening the site sends one Telegram message per browser tab: country, city,
+time in Egypt, and device. The bot token and chat id live in
+`lib/core/visit/telegram_secrets.dart`, which is gitignored.
+`telegram_secrets.example.dart` is the empty template. Refreshing the same
+tab does not send another message.
+
+The token stays out of git. A web build still contains it, because the page
+itself sends the message. Use the regular web build for these alerts. The
+WebAssembly build does not send them.
+
 ## Build for production
 
 ```bash

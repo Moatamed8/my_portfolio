@@ -64,6 +64,7 @@ flutter:
     - assets/projects/2rbly/
     - assets/projects/2rbly_driver/
     - assets/projects/2rbly_partner/
+    - assets/projects/bokidz/
 
   fonts:
     - family: Poppins

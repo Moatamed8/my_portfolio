@@ -33,4 +33,21 @@ void main() {
 
     await tester.pumpWidget(const SizedBox());
   });
+
+  testWidgets('narrow window does not overflow the about stats', (
+    WidgetTester tester,
+  ) async {
+    tester.view.physicalSize = const Size(420, 800);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(const PortfolioApp());
+    await tester.pump();
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('Years of Experience'), findsOneWidget);
+
+    await tester.pumpWidget(const SizedBox());
+  });
 }

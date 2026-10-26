@@ -116,16 +116,44 @@ class _SkillChip extends StatelessWidget {
 class _Stats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      mainAxisSpacing: 16,
-      crossAxisSpacing: 16,
-      childAspectRatio: 1.35,
-      children: PortfolioData.highlights
-          .map((h) => _StatCard(highlight: h))
-          .toList(),
+    final items = PortfolioData.highlights;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        const gap = 16.0;
+        final twoColumns = constraints.maxWidth >= 280;
+        if (!twoColumns) {
+          return Column(
+            children: [
+              for (var i = 0; i < items.length; i++) ...[
+                if (i > 0) const SizedBox(height: gap),
+                _StatCard(highlight: items[i]),
+              ],
+            ],
+          );
+        }
+
+        return Column(
+          children: [
+            for (var i = 0; i < items.length; i += 2) ...[
+              if (i > 0) const SizedBox(height: gap),
+              IntrinsicHeight(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(child: _StatCard(highlight: items[i])),
+                    const SizedBox(width: gap),
+                    Expanded(
+                      child: i + 1 < items.length
+                          ? _StatCard(highlight: items[i + 1])
+                          : const SizedBox.shrink(),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ],
+        );
+      },
     );
   }
 }
@@ -147,15 +175,19 @@ class _StatCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ShaderMask(
-            shaderCallback: (r) => AppColors.brandGradient.createShader(r),
-            child: Text(
-              highlight.value,
-              style: const TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-                height: 1,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: ShaderMask(
+              shaderCallback: (r) => AppColors.brandGradient.createShader(r),
+              child: Text(
+                highlight.value,
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  height: 1,
+                ),
               ),
             ),
           ),
@@ -165,6 +197,7 @@ class _StatCard extends StatelessWidget {
             style: TextStyle(
               fontSize: 13.5,
               fontWeight: FontWeight.w500,
+              height: 1.3,
               color: context.muted,
             ),
           ),
