@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/app_colors.dart';
+import '../../core/app_theme.dart';
 import '../../core/utils.dart';
 import '../../domain/entities/project.dart';
 import 'store_link_button.dart';
@@ -34,6 +35,7 @@ class ProjectDetailsBody extends StatelessWidget {
               child: Text(
                 project.title,
                 style: TextStyle(
+                  fontFamily: AppTheme.display,
                   fontSize: titleSize,
                   fontWeight: FontWeight.w600,
                   height: 1.2,

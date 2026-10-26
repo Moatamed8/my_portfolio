@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 import '../data/portfolio_data.dart';
 import '../widgets/reveal_on_scroll.dart';
@@ -54,6 +55,7 @@ class _Bio extends StatelessWidget {
         Text(
           PortfolioData.aboutHeadline,
           style: TextStyle(
+            fontFamily: AppTheme.display,
             fontSize: Responsive.value(context, mobile: 22.0, desktop: 26.0),
             fontWeight: FontWeight.w600,
             height: 1.3,
@@ -183,6 +185,7 @@ class _StatCard extends StatelessWidget {
               child: Text(
                 highlight.value,
                 style: const TextStyle(
+                  fontFamily: AppTheme.display,
                   fontSize: 40,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,

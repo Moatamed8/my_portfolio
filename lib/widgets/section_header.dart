@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 
 /// A consistent eyebrow + title + subtitle header used at the top of sections.
@@ -46,6 +47,7 @@ class SectionHeader extends StatelessWidget {
           title,
           textAlign: centered ? TextAlign.center : TextAlign.start,
           style: TextStyle(
+            fontFamily: AppTheme.display,
             fontWeight: FontWeight.w700,
             height: 1.1,
             fontSize: Responsive.value(context, mobile: 30.0, desktop: 42.0),

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 import '../core/theme_controller.dart';
 import '../core/utils.dart';
@@ -108,6 +109,7 @@ class _Logo extends StatelessWidget {
             'MW',
             style: TextStyle(
               color: Colors.white,
+              fontFamily: AppTheme.display,
               fontWeight: FontWeight.w700,
               fontSize: 15,
             ),
@@ -117,6 +119,7 @@ class _Logo extends StatelessWidget {
         Text(
           PortfolioData.firstName,
           style: TextStyle(
+            fontFamily: AppTheme.display,
             fontWeight: FontWeight.w600,
             fontSize: 17,
             color: context.textColor,

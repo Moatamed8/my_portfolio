@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 import '../data/portfolio_data.dart';
 import '../widgets/reveal_on_scroll.dart';
@@ -123,6 +124,7 @@ class _ServiceCardState extends State<_ServiceCard> {
             Text(
               widget.service.name,
               style: TextStyle(
+                fontFamily: AppTheme.display,
                 fontSize: 19,
                 fontWeight: FontWeight.w600,
                 color: context.textColor,

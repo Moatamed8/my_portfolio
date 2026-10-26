@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 import '../core/utils.dart';
 import '../data/portfolio_data.dart';
@@ -89,6 +90,7 @@ class _HeroText extends StatelessWidget {
           "I'm ${PortfolioData.name}",
           textAlign: textAlign,
           style: TextStyle(
+            fontFamily: AppTheme.display,
             fontWeight: FontWeight.w700,
             height: 1.05,
             letterSpacing: -1,
@@ -102,6 +104,7 @@ class _HeroText extends StatelessWidget {
           child: AnimatedRole(
             roles: PortfolioData.roles,
             style: TextStyle(
+              fontFamily: AppTheme.display,
               fontWeight: FontWeight.w600,
               height: 1.1,
               fontSize: Responsive.value(context, mobile: 24.0, desktop: 34.0),

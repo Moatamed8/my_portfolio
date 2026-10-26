@@ -5,7 +5,8 @@ import 'app_colors.dart';
 class AppTheme {
   AppTheme._();
 
-  static const String _font = 'Poppins';
+  static const String display = 'Montserrat';
+  static const String body = 'Poppins';
 
   static ThemeData get dark => _base(
     brightness: Brightness.dark,
@@ -49,13 +50,14 @@ class AppTheme {
 
   static TextTheme _textTheme(TextTheme base, Color text, Color muted) {
     TextStyle s(
+      String family,
       double size,
       FontWeight weight, {
       double? height,
       double? spacing,
       Color? color,
     }) => TextStyle(
-      fontFamily: _font,
+      fontFamily: family,
       fontSize: size,
       fontWeight: weight,
       height: height,
@@ -64,18 +66,30 @@ class AppTheme {
     );
 
     return base
+        .apply(fontFamily: body)
         .copyWith(
-          displayLarge: s(64, FontWeight.w700, height: 1.05, spacing: -1),
-          displayMedium: s(48, FontWeight.w700, height: 1.1, spacing: -0.5),
-          displaySmall: s(36, FontWeight.w600, height: 1.15),
-          headlineMedium: s(28, FontWeight.w600, height: 1.2),
-          headlineSmall: s(22, FontWeight.w600),
-          titleLarge: s(20, FontWeight.w600),
-          titleMedium: s(16, FontWeight.w500),
-          bodyLarge: s(17, FontWeight.w400, height: 1.6, color: muted),
-          bodyMedium: s(15, FontWeight.w400, height: 1.6, color: muted),
-          labelLarge: s(14, FontWeight.w500),
-        )
-        .apply(fontFamily: _font);
+          displayLarge: s(
+            display,
+            64,
+            FontWeight.w700,
+            height: 1.05,
+            spacing: -1,
+          ),
+          displayMedium: s(
+            display,
+            48,
+            FontWeight.w700,
+            height: 1.1,
+            spacing: -0.5,
+          ),
+          displaySmall: s(display, 36, FontWeight.w600, height: 1.15),
+          headlineMedium: s(display, 28, FontWeight.w600, height: 1.2),
+          headlineSmall: s(display, 22, FontWeight.w600),
+          titleLarge: s(display, 20, FontWeight.w600),
+          titleMedium: s(display, 16, FontWeight.w500),
+          bodyLarge: s(body, 17, FontWeight.w400, height: 1.6, color: muted),
+          bodyMedium: s(body, 15, FontWeight.w400, height: 1.6, color: muted),
+          labelLarge: s(body, 14, FontWeight.w500),
+        );
   }
 }

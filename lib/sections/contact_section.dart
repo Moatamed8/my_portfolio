@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 import '../core/utils.dart';
 import '../data/portfolio_data.dart';
@@ -102,6 +103,7 @@ class _ContactCopy extends StatelessWidget {
           "Let's work together!",
           style: TextStyle(
             color: Colors.white,
+            fontFamily: AppTheme.display,
             fontWeight: FontWeight.w700,
             height: 1.2,
             fontSize: Responsive.value(context, mobile: 24.0, desktop: 30.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
+import '../core/app_theme.dart';
 import '../core/responsive.dart';
 import '../data/portfolio_data.dart';
 
@@ -34,6 +35,7 @@ class Footer extends StatelessWidget {
                 child: const Text(
                   'MW',
                   style: TextStyle(
+                    fontFamily: AppTheme.display,
                     fontWeight: FontWeight.w700,
                     fontSize: 20,
                     color: Colors.white,
@@ -51,7 +53,7 @@ class Footer extends StatelessWidget {
             'Built with Flutter Web 💙',
             style: TextStyle(fontSize: 13.5, color: context.muted),
           ),
-/*
+          /*
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
