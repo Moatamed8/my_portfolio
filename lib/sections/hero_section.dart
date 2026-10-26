@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/app_colors.dart';
 import '../core/responsive.dart';
@@ -148,7 +149,7 @@ class _HeroText extends StatelessWidget {
 }
 
 class _SocialDot extends StatefulWidget {
-  final IconData icon;
+  final String icon;
   final String url;
   final String label;
   const _SocialDot({
@@ -186,10 +187,16 @@ class _SocialDotState extends State<_SocialDot> {
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: context.border),
               ),
-              child: Icon(
-                widget.icon,
-                size: 20,
-                color: _hover ? Colors.white : context.muted,
+              child: Center(
+                child: SvgPicture.asset(
+                  widget.icon,
+                  width: 20,
+                  height: 20,
+                  colorFilter: ColorFilter.mode(
+                    _hover ? Colors.white : context.muted,
+                    BlendMode.srcIn,
+                  ),
+                ),
               ),
             ),
           ),

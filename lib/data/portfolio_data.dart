@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../domain/entities/content.dart';
 import '../domain/entities/project.dart';
 
@@ -65,6 +63,7 @@ class PortfolioData {
     'CI/CD',
     'Git & GitHub',
   ];
+
   // --- Contact ---
   static const String phoneDisplay = '+20 128 858 4664';
 
@@ -84,21 +83,38 @@ class PortfolioData {
   static const String profileImage = 'assets/images/profile.jpeg';
 
   static const List<SocialLink> socials = [
-    SocialLink(label: 'GitHub', url: gitHub, icon: Icons.code_rounded),
+    SocialLink(label: 'GitHub', url: gitHub, icon: 'assets/icons/github.svg'),
     SocialLink(
       label: 'LinkedIn',
       url: linkedin,
-      icon: Icons.business_center_rounded,
+      icon: 'assets/icons/linkedin.svg',
     ),
-    SocialLink(label: 'WhatsApp', url: whatsapp, icon: Icons.chat_rounded),
-    SocialLink(label: 'Twitter', url: twitter, icon: Icons.alternate_email),
+    SocialLink(
+      label: 'Freelancer',
+      url: freelancer,
+      icon: 'assets/icons/freelancer.svg',
+    ),
+    SocialLink(
+      label: 'WhatsApp',
+      url: whatsapp,
+      icon: 'assets/icons/whatsapp.svg',
+    ),
+    SocialLink(
+      label: 'Twitter',
+      url: twitter,
+      icon: 'assets/icons/twitter.svg',
+    ),
+
+    SocialLink(
+      label: 'Facebook',
+      url: facebook,
+      icon: 'assets/icons/facebook.svg',
+    ),
     SocialLink(
       label: 'Instagram',
       url: instagram,
-      icon: Icons.camera_alt_rounded,
+      icon: 'assets/icons/instagram.svg',
     ),
-    SocialLink(label: 'Facebook', url: facebook, icon: Icons.facebook_rounded),
-    SocialLink(label: 'Freelancer', url: freelancer, icon: Icons.work_rounded),
   ];
 
   static const List<Service> services = [

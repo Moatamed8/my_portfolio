@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /// A stat shown in the About section.
 class Highlight {
   final String value;
@@ -12,7 +10,7 @@ class Highlight {
 class SocialLink {
   final String label;
   final String url;
-  final IconData icon;
+  final String icon;
 
   const SocialLink({
     required this.label,

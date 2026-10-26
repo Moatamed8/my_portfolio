@@ -93,8 +93,10 @@ Future<void> _pumpCard(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
       home: Scaffold(
-        body: Center(
-          child: SizedBox(width: desktop ? 560 : 360, child: card),
+        body: SingleChildScrollView(
+          child: Center(
+            child: SizedBox(width: desktop ? 560 : 360, child: card),
+          ),
         ),
       ),
     ),

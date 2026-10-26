@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
 import '../core/responsive.dart';
-import '../core/utils.dart';
 import '../data/portfolio_data.dart';
 
 class Footer extends StatelessWidget {
@@ -49,9 +48,10 @@ class Footer extends StatelessWidget {
             ],
           ),
           Text(
-            'Built with Flutter 💙',
+            'Built with Flutter Web 💙',
             style: TextStyle(fontSize: 13.5, color: context.muted),
           ),
+/*
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -65,6 +65,7 @@ class Footer extends StatelessWidget {
                 ),
             ],
           ),
+*/
         ],
       ),
     );

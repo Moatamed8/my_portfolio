@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../core/app_colors.dart';
 import '../core/responsive.dart';
@@ -22,7 +23,7 @@ class ContactSection extends StatelessWidget {
               eyebrow: 'Contact',
               title: 'Let’s build something together',
               subtitle:
-              "Have a project, an idea, or an opportunity in mind? "
+                  "Have a project, an idea, or an opportunity in mind? "
                   "I'd love to hear about it and discuss how I can help.",
             ),
           ),
@@ -109,8 +110,8 @@ class _ContactCopy extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           "Let's work together to turn your idea into a useful, "
-              "reliable, and polished product. "
-              "Tap below and let's get started.",
+          "reliable, and polished product. "
+          "Tap below and let's get started.",
           style: TextStyle(
             color: Colors.white.withValues(alpha: 0.9),
             fontSize: 15,
@@ -191,7 +192,7 @@ class _StartButtonState extends State<_StartButton> {
 }
 
 class _ContactIcon extends StatefulWidget {
-  final IconData icon;
+  final String icon;
   final String url;
   final String label;
   const _ContactIcon({
@@ -225,10 +226,16 @@ class _ContactIconState extends State<_ContactIcon> {
               color: Colors.white.withValues(alpha: _hover ? 1 : 0.18),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(
-              widget.icon,
-              size: 20,
-              color: _hover ? AppColors.accent : Colors.white,
+            child: Center(
+              child: SvgPicture.asset(
+                widget.icon,
+                width: 20,
+                height: 20,
+                colorFilter: ColorFilter.mode(
+                  _hover ? AppColors.accent : Colors.white,
+                  BlendMode.srcIn,
+                ),
+              ),
             ),
           ),
         ),
