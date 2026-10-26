@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/app_colors.dart';
-import '../../core/app_theme.dart';
-import '../../core/responsive.dart';
-import '../../domain/entities/project.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/app_theme.dart';
+import '../../../core/responsive.dart';
+import '../../../domain/entities/project.dart';
 import 'project_carousel.dart';
 import 'project_details.dart';
 

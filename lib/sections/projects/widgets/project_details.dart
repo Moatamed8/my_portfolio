@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../core/app_colors.dart';
-import '../../core/app_theme.dart';
-import '../../core/utils.dart';
-import '../../domain/entities/project.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/app_theme.dart';
+import '../../../core/utils.dart';
+import '../../../domain/entities/project.dart';
 import 'store_link_button.dart';
 
 /// Title, description, downloads, and store buttons for the mobile dialog.

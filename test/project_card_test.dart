@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:new_portfolio/core/app_theme.dart';
 import 'package:new_portfolio/data/portfolio_data.dart';
-import 'package:new_portfolio/widgets/projects/project_card.dart';
+import 'package:new_portfolio/sections/projects/widgets/project_card.dart';
 
 void main() {
   final multiImage = PortfolioData.projects.firstWhere(

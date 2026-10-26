@@ -25,8 +25,8 @@ lib/
 ├── domain/entities/          # Project and other content models
 ├── data/
 │   └── portfolio_data.dart   # ALL content lives here — edit this file
-├── widgets/                  # Reusable UI, including project cards
-├── sections/                 # Page sections + navbar/footer
+├── widgets/                  # Shared UI used by more than one section
+├── sections/                 # One folder per section, with its own widgets
 └── screens/
     └── home_screen.dart      # Layout + scroll navigation
 ```

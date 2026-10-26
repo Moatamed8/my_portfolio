@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../core/responsive.dart';
-import '../data/portfolio_data.dart';
-import '../widgets/projects/project_card.dart';
-import '../widgets/reveal_on_scroll.dart';
-import '../widgets/section_header.dart';
+import '../../core/responsive.dart';
+import '../../data/portfolio_data.dart';
+import '../../widgets/reveal_on_scroll.dart';
+import '../../widgets/section_header.dart';
+import 'widgets/project_card.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});

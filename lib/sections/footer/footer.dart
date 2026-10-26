@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../core/app_colors.dart';
-import '../core/app_theme.dart';
-import '../core/responsive.dart';
-import '../data/portfolio_data.dart';
+import '../../core/app_colors.dart';
+import '../../core/app_theme.dart';
+import '../../core/responsive.dart';
+import '../../data/portfolio_data.dart';
 
 class Footer extends StatelessWidget {
   final VoidCallback onTop;
@@ -53,21 +53,6 @@ class Footer extends StatelessWidget {
             'Built with Flutter Web 💙',
             style: TextStyle(fontSize: 13.5, color: context.muted),
           ),
-          /*
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              for (final s in PortfolioData.socials.take(4))
-                IconButton(
-                  onPressed: () => openUrl(s.url),
-                  icon: Icon(s.icon, size: 18),
-                  color: context.muted,
-                  tooltip: s.label,
-                  splashRadius: 18,
-                ),
-            ],
-          ),
-*/
         ],
       ),
     );

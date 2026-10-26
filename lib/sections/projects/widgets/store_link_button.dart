@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/app_colors.dart';
+import '../../../core/app_colors.dart';
 
 /// Store badge used on project details. Matches the portfolio outline button.
 class StoreLinkButton extends StatefulWidget {

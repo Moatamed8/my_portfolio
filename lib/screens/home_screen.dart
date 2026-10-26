@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
 import '../core/responsive.dart';
-import '../sections/about_section.dart';
-import '../sections/contact_section.dart';
-import '../sections/footer.dart';
-import '../sections/hero_section.dart';
-import '../sections/nav_bar.dart';
-import '../sections/projects_section.dart';
-import '../sections/services_section.dart';
+import '../sections/about/about_section.dart';
+import '../sections/contact/contact_section.dart';
+import '../sections/footer/footer.dart';
+import '../sections/hero/hero_section.dart';
+import '../sections/nav/nav_bar.dart';
+import '../sections/projects/projects_section.dart';
+import '../sections/services/services_section.dart';
 import '../widgets/section_decor.dart';
 
 class HomeScreen extends StatefulWidget {
