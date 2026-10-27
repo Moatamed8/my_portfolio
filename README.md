@@ -1,31 +1,19 @@
 # Moatamed Wageh — Portfolio
 
-A one-page portfolio built with Flutter Web. Dark mode is the default, with a light mode too. Headings use Montserrat. Body text uses Poppins.
-
 ## About
 
-Moatamed Wageh is a Senior Flutter Developer from Egypt. He studied Computer Science and Information Technology at Zagazig University and builds production mobile apps with Flutter.
+Senior Flutter Developer with 5+ years of experience building and shipping cross-platform mobile apps on the App Store and Google Play. Skilled in Dart, state management (Bloc, Provider, Riverpod), RESTful API integration, real-time features (Socket.IO, WebRTC), payment gateways, Firebase, and CI/CD. Experienced across e-commerce, education, healthcare, food delivery, and marketplace products, including AI-powered features. Former co-founder and lead mobile developer of a three-app delivery platform.
 
-The site shows 6+ years of experience, 30+ projects, and 20+ apps in stores.
-
-## Work
+## Selected Work
 
 Bokidz, Luxury Health, Trade Off, Qlines, Essaly, 2rbly, 2rbly - Delivery, and 2rbly Partner.
 
-A project can have one image or several. Several images become a carousel. Store buttons show only when a link exists.
 
 ## Services
 
 Flutter Development, Android Development, and AI Development.
 
-## Features
 
-- HTML splash while Flutter starts
-- Phone, tablet, and desktop layouts
-- Dark and light theme
-- Project hover on desktop, and a details dialog on phone
-- Local WebP images
-- One Telegram visit message per browser tab
 
 ## Project structure
 
@@ -50,30 +38,6 @@ Change the name, bio, skills, services, projects, and links in `lib/data/portfol
 - Icons: `assets/icons/`
 - Profile photo: `assets/images/profile.jpeg`
 
-## Run
-
-```bash
-flutter pub get
-flutter run -d chrome
-```
-
-Needs Flutter SDK `^3.12.1`.
-
-Visit alerts use `lib/core/visit/telegram_secrets.dart`. That file is gitignored. Copy `telegram_secrets.example.dart` if you need to recreate it. The same browser tab does not send a second message.
-
-A normal web build still contains the token, because the page sends the message. The WebAssembly build does not send alerts.
-
-## Build
-
-```bash
-flutter build web --release
-```
-
-Output is in `build/web/`.
-
-```bash
-firebase deploy
-```
 
 ## Links
 
