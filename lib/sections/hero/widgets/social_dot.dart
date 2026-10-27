@@ -39,10 +39,15 @@ class _SocialDotState extends State<SocialDot> {
               width: 44,
               height: 44,
               decoration: BoxDecoration(
-                color: _hover ? null : context.surfaceAlt,
-                gradient: _hover ? AppColors.brandGradient : null,
+                gradient: _hover
+                    ? AppColors.buttonGradient
+                    : AppColors.contactGradient,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: context.border),
+                border: Border.all(
+                  color: _hover
+                      ? Colors.transparent
+                      : Colors.white.withValues(alpha: 0.14),
+                ),
               ),
               child: Center(
                 child: SvgPicture.asset(
@@ -50,7 +55,7 @@ class _SocialDotState extends State<SocialDot> {
                   width: 20,
                   height: 20,
                   colorFilter: ColorFilter.mode(
-                    _hover ? Colors.white : context.muted,
+                    _hover ? AppColors.textColor : Colors.white,
                     BlendMode.srcIn,
                   ),
                 ),

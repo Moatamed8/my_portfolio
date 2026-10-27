@@ -38,17 +38,10 @@
   <style>
     :root {
       --bg: #0C0B0A;
-      --fg: #F4EFE6;
-      --muted: #A89B8C;
-      --accent: #D4B483;
-      --accent2: #A68445;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #F6F1E8;
-        --fg: #1A1612;
-        --muted: #6E655C;
-      }
+      --fg: #F5F9FF;
+      --muted: #D3DDE8;
+      --accent: #7DE7EB;
+      --accent2: #33BBCF;
     }
     html, body { height: 100%; }
     body {
@@ -65,9 +58,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(900px 480px at 85% -10%, rgba(212,180,131,0.16), transparent 60%),
-        var(--bg);
+      background: var(--bg);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       transition: opacity .6s ease, visibility .6s ease;
       will-change: opacity;

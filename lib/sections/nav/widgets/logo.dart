@@ -16,14 +16,14 @@ class Logo extends StatelessWidget {
           width: 38,
           height: 38,
           decoration: BoxDecoration(
-            gradient: AppColors.brandGradient,
+            gradient: AppColors.buttonGradient,
             borderRadius: BorderRadius.circular(11),
           ),
           alignment: Alignment.center,
           child: const Text(
             'MW',
             style: TextStyle(
-              color: AppColors.onAccent,
+              color: AppColors.textColor,
               fontFamily: AppTheme.display,
               fontWeight: FontWeight.w700,
               fontSize: 15,

@@ -31,7 +31,7 @@ class Footer extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ShaderMask(
-                shaderCallback: (r) => AppColors.brandGradient.createShader(r),
+                shaderCallback: (r) => AppColors.buttonGradient.createShader(r),
                 child: const Text(
                   'MW',
                   style: TextStyle(

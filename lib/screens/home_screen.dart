@@ -1,9 +1,11 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import '../core/app_colors.dart';
 import '../core/responsive.dart';
+import '../core/splash/splash_remover.dart';
 import '../sections/about/about_section.dart';
 import '../sections/contact/contact_section.dart';
 import '../sections/footer/footer.dart';
@@ -34,11 +36,45 @@ class _HomeScreenState extends State<HomeScreen> {
 
   bool _scrolled = false;
   bool _showTop = false;
+  bool _splashRemoved = false;
+  ImageStream? _backgroundStream;
+  ImageStreamListener? _backgroundListener;
 
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_onScroll);
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      _waitForBackground();
+    });
+  }
+
+  /// Holds the HTML splash until the night-sky photo is decoded.
+  void _waitForBackground() {
+    if (_splashRemoved || !mounted) return;
+    final stream = const AssetImage(
+      BackgroundDecor.asset,
+    ).resolve(createLocalImageConfiguration(context));
+    _backgroundStream = stream;
+    _backgroundListener = ImageStreamListener(
+      (_, _) => _finishSplash(),
+      onError: (_, _) => _finishSplash(),
+    );
+    stream.addListener(_backgroundListener!);
+  }
+
+  void _finishSplash() {
+    final listener = _backgroundListener;
+    if (listener != null) {
+      _backgroundStream?.removeListener(listener);
+      _backgroundListener = null;
+    }
+    if (!mounted || _splashRemoved) return;
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || _splashRemoved) return;
+      _splashRemoved = true;
+      removeSplash();
+    });
   }
 
   void _onScroll() {
@@ -73,6 +109,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    final listener = _backgroundListener;
+    if (listener != null) {
+      _backgroundStream?.removeListener(listener);
+    }
     _scrollController.dispose();
     super.dispose();
   }
@@ -107,10 +147,20 @@ class _HomeScreenState extends State<HomeScreen> {
           opacity: _showTop ? 1 : 0,
           child: FloatingActionButton(
             onPressed: _toTop,
-            backgroundColor: AppColors.accent,
-            foregroundColor: AppColors.onAccent,
+            elevation: 0,
+            hoverElevation: 2,
+            backgroundColor: Colors.transparent,
+            foregroundColor: AppColors.textColor,
             mini: true,
-            child: const Icon(Icons.arrow_upward_rounded),
+            child: Ink(
+              decoration: const BoxDecoration(
+                gradient: AppColors.buttonGradient,
+                shape: BoxShape.circle,
+              ),
+              child: const SizedBox.expand(
+                child: Icon(Icons.arrow_upward_rounded),
+              ),
+            ),
           ),
         ),
       ),

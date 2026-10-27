@@ -62,12 +62,15 @@ class _ProjectCardState extends State<ProjectCard> {
           transformAlignment: Alignment.center,
           clipBehavior: Clip.none,
           decoration: BoxDecoration(
-            color: context.surface,
+            // color: context.surface,
+            gradient: AppColors.contactGradient,
             borderRadius: BorderRadius.circular(22),
             boxShadow: _hover
                 ? [
                     BoxShadow(
-                      color: AppColors.accent.withValues(alpha: 0.2),
+                      color: AppColors.buttonGradient.colors.last.withValues(
+                        alpha: 0.28,
+                      ),
                       blurRadius: 36,
                       offset: const Offset(0, 18),
                     ),
@@ -78,7 +81,7 @@ class _ProjectCardState extends State<ProjectCard> {
             borderRadius: BorderRadius.circular(22),
             border: Border.all(
               color: _hover
-                  ? AppColors.accent.withValues(alpha: 0.5)
+                  ? AppColors.buttonGradient.colors.last.withValues(alpha: 0.85)
                   : context.border,
             ),
           ),
@@ -193,11 +196,11 @@ class _ProjectSummary extends StatelessWidget {
                     Expanded(
                       child: Text(
                         project.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontFamily: AppTheme.display,
                           fontSize: 19,
                           fontWeight: FontWeight.w600,
-                          color: context.textColor,
+                          color: AppColors.darkText,
                         ),
                       ),
                     ),
@@ -206,13 +209,16 @@ class _ProjectSummary extends StatelessWidget {
                       width: 38,
                       height: 38,
                       decoration: BoxDecoration(
-                        color: context.surfaceAlt,
+                        gradient: AppColors.contactGradient,
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.14),
+                        ),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_outward_rounded,
                         size: 18,
-                        color: context.muted,
+                        color: Colors.white,
                       ),
                     ),
                   ],
@@ -220,7 +226,9 @@ class _ProjectSummary extends StatelessWidget {
                 const SizedBox(height: 14),
                 Text(
                   project.description,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: AppColors.darkMuted),
                 ),
               ],
             ),

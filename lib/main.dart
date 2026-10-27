@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 
 import 'core/app_theme.dart';
-import 'core/splash/splash_remover.dart';
 import 'core/theme_controller.dart';
 import 'core/visit/visit_notifier.dart';
 import 'screens/home_screen.dart';
@@ -24,7 +22,6 @@ class PortfolioApp extends StatefulWidget {
 
 class _PortfolioAppState extends State<PortfolioApp> {
   ThemeMode _mode = ThemeMode.dark;
-  bool _splashRemoved = false;
 
   void _toggleTheme() {
     setState(() {
@@ -44,13 +41,6 @@ class _PortfolioAppState extends State<PortfolioApp> {
   void initState() {
     super.initState();
     _syncSystemUi();
-    // Remove the HTML loading screen once the first frame is on screen.
-    SchedulerBinding.instance.addPostFrameCallback((_) {
-      if (!_splashRemoved) {
-        _splashRemoved = true;
-        removeSplash();
-      }
-    });
   }
 
   @override

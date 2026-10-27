@@ -21,13 +21,13 @@ class PortfolioData {
   ];
 
   static const String heroTagline =
-      'I’m a Senior Flutter Developer who turns ideas into polished, '
+      ' Senior Flutter Developer who turns ideas into polished, '
       'production-ready mobile apps — with a focus on clean architecture, '
       'performance, and great user experiences.';
 
   // --- About ---
   static const String aboutHeadline =
-      "I'm Moatamed Wageh, a Senior Flutter Developer";
+      "I'm Moatamed Wageh, Senior Flutter Developer";
 
   static const String aboutBody =
       'I graduated with a Bachelor of Computer Science and Information Technology '
@@ -127,9 +127,6 @@ class PortfolioData {
       tools: [
         'Flutter',
         'Dart',
-        'Bloc',
-        'Riverpod',
-        'Provider',
         'Clean Architecture',
       ],
     ),
@@ -139,7 +136,7 @@ class PortfolioData {
       description:
           'Develop reliable Android applications using Flutter and native '
           'Android technologies, with a focus on performance and user experience.',
-      tools: ['Flutter', 'Android', 'Java', 'Gradle', 'Maven'],
+      tools: ['Flutter', 'Android', 'Java'],
     ),
     Service(
       name: 'AI Development',
@@ -157,8 +154,7 @@ class PortfolioData {
     ),
   ];
 
-  /// Download labels follow the public Google Play install bracket.
-  /// Edit a value here when a store number changes.
+
   static const List<Project> projects = [
     Project(
       title: 'Bokidz',

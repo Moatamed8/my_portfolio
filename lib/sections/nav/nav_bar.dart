@@ -27,22 +27,29 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
-    final bg = context.surface;
+    final dark = context.isDark;
+    final barColor = dark
+        ? Colors.black.withValues(alpha: scrolled ? 0.72 : 0.5)
+        : (scrolled
+              ? context.surface.withValues(alpha: 0.85)
+              : Colors.transparent);
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
       height: 72,
       decoration: BoxDecoration(
-        color: scrolled ? bg.withValues(alpha: 0.85) : Colors.transparent,
+        color: barColor,
         border: Border(
           bottom: BorderSide(
-            color: scrolled ? context.border : Colors.transparent,
+            color: dark
+                ? Colors.white.withValues(alpha: 0.08)
+                : (scrolled ? context.border : Colors.transparent),
           ),
         ),
       ),
       child: ClipRect(
         child: NavBlur(
-          enabled: scrolled,
+          enabled: dark || scrolled,
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 1180),

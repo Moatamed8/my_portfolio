@@ -8,12 +8,14 @@ class StoreLinkButton extends StatefulWidget {
   final String label;
   final String iconAsset;
   final VoidCallback onPressed;
+  final Color? color;
 
   const StoreLinkButton({
     super.key,
     required this.label,
     required this.iconAsset,
     required this.onPressed,
+    this.color,
   });
 
   @override
@@ -25,7 +27,7 @@ class _StoreLinkButtonState extends State<StoreLinkButton> {
 
   @override
   Widget build(BuildContext context) {
-    final color = context.textColor;
+    final color = widget.color ?? context.textColor;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: (_) => setState(() => _hover = true),
@@ -40,7 +42,9 @@ class _StoreLinkButtonState extends State<StoreLinkButton> {
             color: _hover ? color.withValues(alpha: 0.06) : Colors.transparent,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: _hover ? AppColors.accent : context.border,
+              color: _hover
+                  ? AppColors.buttonGradient.colors.last
+                  : context.border,
               width: 1.4,
             ),
           ),

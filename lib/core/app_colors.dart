@@ -17,13 +17,14 @@ class AppColors {
     end: Alignment.bottomRight,
   );
 
-  // Dark theme — warm black, not blue-black
+  // Dark theme — cool light type, so it reads on the night-sky photo.
   static const Color darkBg = Color(0xFF0C0B0A);
   static const Color darkSurface = Color(0xFF161310);
   static const Color darkSurfaceAlt = Color(0xFF211C17);
-  static const Color darkText = Color(0xFFF4EFE6);
-  static const Color darkMuted = Color(0xFFA89B8C);
+  static const Color darkText = Color(0xFFF5F9FF);
+  static const Color darkMuted = Color(0xFFD3DDE8);
   static const Color darkBorder = Color(0xFF2C261F);
+  static const textColor = Color(0xFF2B2B2B);
 
   // Light theme — warm paper
   static const Color lightBg = Color(0xFFF6F1E8);
@@ -32,19 +33,43 @@ class AppColors {
   static const Color lightText = Color(0xFF1A1612);
   static const Color lightMuted = Color(0xFF6E655C);
   static const Color lightBorder = Color(0xFFE4D9C8);
+  static const buttonGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0XFF7DE7EB), Color(0XFF33BBCF)],
+  );
+  static const contactGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0XFF2E2D36), Color(0XFF11101D)],
+  );
+
+  static const grayWhite = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFFFFFFFF), Color(0xFFF3F2FF)],
+  );
 }
+
+//
+/*Gradient get contactCard =>
+    brightness == Brightness.light ? grayWhite : contactGradi;*/
 
 /// Convenience accessors that resolve to the right color for the active theme.
 extension ThemePalette on BuildContext {
   bool get isDark => Theme.of(this).brightness == Brightness.dark;
 
   Color get surface => isDark ? AppColors.darkSurface : AppColors.lightSurface;
+
   Color get surfaceAlt =>
       isDark ? AppColors.darkSurfaceAlt : AppColors.lightSurfaceAlt;
-  Color get textColor => isDark ? AppColors.darkText : AppColors.lightText;
+
   Color get muted => isDark ? AppColors.darkMuted : AppColors.lightMuted;
+
   Color get border => isDark ? AppColors.darkBorder : AppColors.lightBorder;
 
   /// Gold used for small text and icons sitting on the page background.
   Color get gold => isDark ? AppColors.accent : AppColors.accentDeep;
+
+  Color get textColor => isDark ? AppColors.darkText : AppColors.lightText;
 }

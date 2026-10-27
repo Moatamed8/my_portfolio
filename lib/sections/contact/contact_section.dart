@@ -35,7 +35,8 @@ class ContactSection extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(isMobile ? 28 : 48),
               decoration: BoxDecoration(
-                color: const Color(0xFF16130F),
+               // color: const Color(0xFF16130F),
+                gradient: AppColors.contactGradient,
                 borderRadius: BorderRadius.circular(28),
                 border: Border.all(
                   color: AppColors.accent.withValues(alpha: 0.45),

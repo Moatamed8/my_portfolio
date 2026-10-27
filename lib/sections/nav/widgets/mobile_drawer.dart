@@ -57,18 +57,40 @@ class MobileDrawer extends StatelessWidget {
               padding: const EdgeInsets.all(22),
               child: SizedBox(
                 width: double.infinity,
-                child: ElevatedButton.icon(
-                  onPressed: () => openUrl(PortfolioData.whatsapp),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.accent,
-                    foregroundColor: AppColors.onAccent,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
+                child: Material(
+                  color: Colors.transparent,
+                  child: Ink(
+                    decoration: BoxDecoration(
+                      gradient: AppColors.buttonGradient,
                       borderRadius: BorderRadius.circular(12),
                     ),
+                    child: InkWell(
+                      onTap: () => openUrl(PortfolioData.whatsapp),
+                      borderRadius: BorderRadius.circular(12),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.chat_rounded,
+                              size: 18,
+                              color: AppColors.textColor,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'Hire Me',
+                              style: TextStyle(
+                                color: AppColors.textColor,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                  icon: const Icon(Icons.chat_rounded, size: 18),
-                  label: const Text('Hire Me'),
                 ),
               ),
             ),

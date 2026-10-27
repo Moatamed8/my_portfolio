@@ -11,16 +11,16 @@ class SkillChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
       decoration: BoxDecoration(
-        color: context.surfaceAlt,
+        gradient: AppColors.contactGradient,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: context.border),
       ),
       child: Text(
         label,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 13.5,
           fontWeight: FontWeight.w500,
-          color: context.textColor,
+          color: AppColors.darkText,
         ),
       ),
     );

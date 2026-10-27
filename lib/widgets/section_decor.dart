@@ -2,44 +2,39 @@ import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
 
-/// Soft, fixed gradient glows behind the whole page. Cheap to paint (static)
-/// and adapts to the active theme.
+/// Night-sky photo behind the page in dark mode. Light mode uses the
+/// plain scaffold color.
 class BackgroundDecor extends StatelessWidget {
   const BackgroundDecor({super.key});
 
+  static const asset = 'assets/images/background.jpg';
+
   @override
   Widget build(BuildContext context) {
-    final isDark = context.isDark;
+    if (!context.isDark) return const SizedBox.shrink();
+
     return IgnorePointer(
-      child: Stack(
-        children: [
-          Positioned(
-            top: -180,
-            right: -120,
-            child: _Blob(
-              color: AppColors.accent.withValues(alpha: isDark ? 0.14 : 0.18),
-              size: 520,
+      child: RepaintBoundary(
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.asset(
+              asset,
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+              filterQuality: FilterQuality.medium,
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _Blob extends StatelessWidget {
-  final Color color;
-  final double size;
-  const _Blob({required this.color, required this.size});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: RadialGradient(colors: [color, Colors.transparent]),
+            const DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Color(0x6B0C0B0A), Color(0x1F0C0B0A)],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

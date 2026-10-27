@@ -64,7 +64,11 @@ class ProjectDetailsBody extends StatelessWidget {
         SizedBox(height: compact ? 10 : 14),
         Row(
           children: [
-            Icon(Icons.download_rounded, size: 16, color: context.gold),
+            Icon(
+              Icons.download_rounded,
+              size: 16,
+              color: AppColors.buttonGradient.colors.last,
+            ),
             const SizedBox(width: 6),
             Flexible(
               child: Text(
@@ -101,15 +105,19 @@ class ProjectHoverActions extends StatelessWidget {
         const SizedBox(height: 14),
         Row(
           children: [
-            Icon(Icons.download_rounded, size: 16, color: context.gold),
+            Icon(
+              Icons.download_rounded,
+              size: 16,
+              color: AppColors.buttonGradient.colors.last,
+            ),
             const SizedBox(width: 6),
             Flexible(
               child: Text(
                 'Downloads: ${project.downloads}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 13.5,
                   fontWeight: FontWeight.w600,
-                  color: context.textColor,
+                  color: AppColors.darkText,
                 ),
               ),
             ),
@@ -117,7 +125,7 @@ class ProjectHoverActions extends StatelessWidget {
         ),
         if (project.hasGooglePlay || project.hasAppStore) ...[
           const SizedBox(height: 12),
-          ProjectStoreLinks(project: project),
+          ProjectStoreLinks(project: project, color: AppColors.darkText),
         ],
       ],
     );
@@ -126,8 +134,9 @@ class ProjectHoverActions extends StatelessWidget {
 
 class ProjectStoreLinks extends StatelessWidget {
   final Project project;
+  final Color? color;
 
-  const ProjectStoreLinks({super.key, required this.project});
+  const ProjectStoreLinks({super.key, required this.project, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -139,12 +148,14 @@ class ProjectStoreLinks extends StatelessWidget {
           StoreLinkButton(
             label: 'Google Play',
             iconAsset: 'assets/icons/google_play.svg',
+            color: color,
             onPressed: () => openUrl(project.googlePlayUrl!),
           ),
         if (project.hasAppStore)
           StoreLinkButton(
             label: 'App Store',
             iconAsset: 'assets/icons/apple.svg',
+            color: color,
             onPressed: () => openUrl(project.appStoreUrl!),
           ),
       ],

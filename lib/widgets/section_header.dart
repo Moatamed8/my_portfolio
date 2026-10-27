@@ -28,14 +28,14 @@ class SectionHeader extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
           decoration: BoxDecoration(
-            color: context.gold.withValues(alpha: 0.1),
+            gradient: AppColors.contactGradient,
             borderRadius: BorderRadius.circular(999),
-            border: Border.all(color: context.gold.withValues(alpha: 0.35)),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.14)),
           ),
           child: Text(
             eyebrow.toUpperCase(),
-            style: TextStyle(
-              color: context.gold,
+            style: const TextStyle(
+              color: Colors.white,
               fontWeight: FontWeight.w600,
               fontSize: 12,
               letterSpacing: 2.4,

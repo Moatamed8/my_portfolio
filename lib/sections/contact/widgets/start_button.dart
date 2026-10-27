@@ -27,7 +27,8 @@ class _StartButtonState extends State<StartButton> {
           transform: Matrix4.translationValues(0, _hover ? -3 : 0, 0),
           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
           decoration: BoxDecoration(
-            color: Colors.white,
+           // color: Colors.white,
+            gradient: AppColors.buttonGradient,
             borderRadius: BorderRadius.circular(14),
             boxShadow: [
               BoxShadow(
@@ -40,12 +41,12 @@ class _StartButtonState extends State<StartButton> {
           child: const Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.chat_rounded, color: AppColors.accentDeep, size: 19),
+              Icon(Icons.chat_rounded, color: AppColors.textColor, size: 19),
               SizedBox(width: 9),
               Text(
                 'Get Started',
                 style: TextStyle(
-                  color: AppColors.accentDeep,
+                  color: AppColors.textColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),

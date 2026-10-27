@@ -35,9 +35,9 @@ class _FloatingBadgeState extends State<FloatingBadge>
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
         decoration: BoxDecoration(
-          color: context.surface,
+          gradient: AppColors.contactGradient,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: context.border),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.14)),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.12),
@@ -53,10 +53,10 @@ class _FloatingBadgeState extends State<FloatingBadge>
             const SizedBox(width: 7),
             Text(
               widget.label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 13,
-                color: context.textColor,
+                color: AppColors.darkText,
               ),
             ),
           ],

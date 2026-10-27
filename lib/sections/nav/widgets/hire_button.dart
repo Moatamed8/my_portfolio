@@ -26,12 +26,14 @@ class _HireButtonState extends State<HireButton> {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
           decoration: BoxDecoration(
-            gradient: AppColors.brandGradient,
+            gradient: AppColors.buttonGradient,
             borderRadius: BorderRadius.circular(11),
             boxShadow: _hover
                 ? [
                     BoxShadow(
-                      color: AppColors.accent.withValues(alpha: 0.4),
+                      color: AppColors.buttonGradient.colors.last.withValues(
+                        alpha: 0.45,
+                      ),
                       blurRadius: 18,
                       offset: const Offset(0, 6),
                     ),
@@ -41,7 +43,7 @@ class _HireButtonState extends State<HireButton> {
           child: const Text(
             'Hire Me',
             style: TextStyle(
-              color: AppColors.onAccent,
+              color: AppColors.textColor,
               fontWeight: FontWeight.w600,
               fontSize: 14,
             ),

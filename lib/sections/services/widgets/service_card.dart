@@ -26,17 +26,20 @@ class _ServiceCardState extends State<ServiceCard> {
         transform: Matrix4.translationValues(0, _hover ? -6 : 0, 0),
         padding: const EdgeInsets.all(28),
         decoration: BoxDecoration(
-          color: context.surface,
+          // color: context.surface,
+          gradient: AppColors.contactGradient,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: _hover
-                ? AppColors.accent.withValues(alpha: 0.5)
+                ? AppColors.buttonGradient.colors.last.withValues(alpha: 0.85)
                 : context.border,
           ),
           boxShadow: _hover
               ? [
                   BoxShadow(
-                    color: AppColors.accent.withValues(alpha: 0.18),
+                    color: AppColors.buttonGradient.colors.last.withValues(
+                      alpha: 0.28,
+                    ),
                     blurRadius: 30,
                     offset: const Offset(0, 14),
                   ),
@@ -50,14 +53,15 @@ class _ServiceCardState extends State<ServiceCard> {
               width: 58,
               height: 58,
               decoration: BoxDecoration(
-                gradient: AppColors.brandGradient,
+                gradient: AppColors.contactGradient,
                 borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.14)),
               ),
               padding: const EdgeInsets.all(14),
               child: SvgPicture.asset(
                 widget.service.icon,
                 colorFilter: const ColorFilter.mode(
-                  AppColors.onAccent,
+                  Colors.white,
                   BlendMode.srcIn,
                 ),
               ),
@@ -65,17 +69,19 @@ class _ServiceCardState extends State<ServiceCard> {
             const SizedBox(height: 20),
             Text(
               widget.service.name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: AppTheme.display,
                 fontSize: 19,
                 fontWeight: FontWeight.w600,
-                color: context.textColor,
+                color: AppColors.darkText,
               ),
             ),
             const SizedBox(height: 10),
             Text(
               widget.service.description,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: AppColors.darkMuted),
             ),
             const SizedBox(height: 18),
             Wrap(
@@ -89,15 +95,18 @@ class _ServiceCardState extends State<ServiceCard> {
                         vertical: 6,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.accent.withValues(alpha: 0.1),
+                        gradient: AppColors.contactGradient,
                         borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.14),
+                        ),
                       ),
                       child: Text(
                         t,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: context.gold,
+                          color: Colors.white,
                         ),
                       ),
                     ),

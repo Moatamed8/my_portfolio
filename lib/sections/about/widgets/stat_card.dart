@@ -13,7 +13,7 @@ class StatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: context.surface,
+        gradient: AppColors.contactGradient,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: context.border),
       ),
@@ -25,7 +25,7 @@ class StatCard extends StatelessWidget {
             fit: BoxFit.scaleDown,
             alignment: Alignment.centerLeft,
             child: ShaderMask(
-              shaderCallback: (r) => AppColors.brandGradient.createShader(r),
+              shaderCallback: (r) => AppColors.buttonGradient.createShader(r),
               child: Text(
                 highlight.value,
                 style: const TextStyle(
@@ -41,11 +41,11 @@ class StatCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             highlight.label,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13.5,
               fontWeight: FontWeight.w500,
               height: 1.3,
-              color: context.muted,
+              color: AppColors.darkMuted,
             ),
           ),
         ],

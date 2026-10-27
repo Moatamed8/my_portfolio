@@ -35,12 +35,12 @@ class _GradientButtonState extends State<GradientButton> {
           transform: Matrix4.translationValues(0, _hover ? -3 : 0, 0),
           padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 15),
           decoration: BoxDecoration(
-            gradient: AppColors.brandGradient,
+            gradient: AppColors.buttonGradient,
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color: AppColors.accent2.withValues(
-                  alpha: _hover ? 0.35 : 0.18,
+                color: AppColors.buttonGradient.colors.last.withValues(
+                  alpha: _hover ? 0.45 : 0.25,
                 ),
                 blurRadius: _hover ? 22 : 12,
                 offset: const Offset(0, 8),
@@ -51,13 +51,13 @@ class _GradientButtonState extends State<GradientButton> {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (widget.icon != null) ...[
-                Icon(widget.icon, color: AppColors.onAccent, size: 19),
+                Icon(widget.icon, color: AppColors.textColor, size: 19),
                 const SizedBox(width: 9),
               ],
               Text(
                 widget.label,
                 style: const TextStyle(
-                  color: AppColors.onAccent,
+                  color: AppColors.textColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),
@@ -93,6 +93,7 @@ class _OutlineButtonState extends State<OutlineButton> {
   @override
   Widget build(BuildContext context) {
     final color = context.textColor;
+    final fill = context.isDark ? AppColors.darkBg : AppColors.lightBg;
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: (_) => setState(() => _hover = true),
@@ -101,31 +102,46 @@ class _OutlineButtonState extends State<OutlineButton> {
         onTap: widget.onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          padding: const EdgeInsets.all(1.6),
           decoration: BoxDecoration(
-            color: _hover ? color.withValues(alpha: 0.06) : Colors.transparent,
+            gradient: AppColors.buttonGradient,
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: _hover ? AppColors.accent : context.border,
-              width: 1.4,
-            ),
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (widget.icon != null) ...[
-                Icon(widget.icon, color: color, size: 19),
-                const SizedBox(width: 9),
-              ],
-              Text(
-                widget.label,
-                style: TextStyle(
-                  color: color,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15,
-                ),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: _hover
+                  ? Color.alphaBlend(
+                      AppColors.buttonGradient.colors.last.withValues(
+                        alpha: 0.14,
+                      ),
+                      fill,
+                    )
+                  : fill,
+              borderRadius: BorderRadius.circular(12.4),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 22.4,
+                vertical: 12.4,
               ),
-            ],
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (widget.icon != null) ...[
+                    Icon(widget.icon, color: color, size: 19),
+                    const SizedBox(width: 9),
+                  ],
+                  Text(
+                    widget.label,
+                    style: TextStyle(
+                      color: color,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
