@@ -40,13 +40,12 @@ class HeroImage extends StatelessWidget {
                 gradient: AppColors.brandGradient,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.accent.withValues(alpha: 0.4),
-                    blurRadius: 40,
-                    spreadRadius: 4,
+                    color: AppColors.accent.withValues(alpha: 0.22),
+                    blurRadius: 28,
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(3),
               child: ClipOval(
                 child: Image.asset(
                   PortfolioData.profileImage,

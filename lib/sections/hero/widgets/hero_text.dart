@@ -57,7 +57,7 @@ class HeroText extends StatelessWidget {
             fontFamily: AppTheme.display,
             fontWeight: FontWeight.w700,
             height: 1.05,
-            letterSpacing: -1,
+            letterSpacing: -0.6,
             fontSize: Responsive.value(context, mobile: 38.0, desktop: 60.0),
             color: context.textColor,
           ),

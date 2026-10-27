@@ -40,12 +40,12 @@ class _StartButtonState extends State<StartButton> {
           child: const Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.chat_rounded, color: AppColors.accent, size: 19),
+              Icon(Icons.chat_rounded, color: AppColors.accentDeep, size: 19),
               SizedBox(width: 9),
               Text(
                 'Get Started',
                 style: TextStyle(
-                  color: AppColors.accent,
+                  color: AppColors.accentDeep,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),

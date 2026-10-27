@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: FloatingActionButton(
             onPressed: _toTop,
             backgroundColor: AppColors.accent,
-            foregroundColor: Colors.white,
+            foregroundColor: AppColors.onAccent,
             mini: true,
             child: const Icon(Icons.arrow_upward_rounded),
           ),

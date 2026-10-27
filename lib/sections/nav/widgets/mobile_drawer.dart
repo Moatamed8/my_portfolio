@@ -61,7 +61,7 @@ class MobileDrawer extends StatelessWidget {
                   onPressed: () => openUrl(PortfolioData.whatsapp),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.accent,
-                    foregroundColor: Colors.white,
+                    foregroundColor: AppColors.onAccent,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),

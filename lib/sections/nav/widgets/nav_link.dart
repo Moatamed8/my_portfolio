@@ -29,7 +29,7 @@ class _NavLinkState extends State<NavLink> {
             style: TextStyle(
               fontSize: 14.5,
               fontWeight: FontWeight.w500,
-              color: _hover ? AppColors.accent : context.muted,
+              color: _hover ? context.gold : context.muted,
             ),
           ),
         ),

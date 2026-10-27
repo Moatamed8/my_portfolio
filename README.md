@@ -1,79 +1,83 @@
 # Moatamed Wageh — Portfolio
 
-A fast, modern, responsive personal portfolio built with **Flutter Web**.
-Designed for performance: an instant HTML/CSS loading screen shows immediately
-while the Flutter engine boots, bundled fonts (no runtime font downloads),
-optimized images, and a clean single-page layout.
+A one-page portfolio built with Flutter Web. Dark mode is the default, with a light mode too. Headings use Montserrat. Body text uses Poppins.
+
+## About
+
+Moatamed Wageh is a Senior Flutter Developer from Egypt. He studied Computer Science and Information Technology at Zagazig University and builds production mobile apps with Flutter.
+
+The site shows 6+ years of experience, 30+ projects, and 20+ apps in stores.
+
+## Work
+
+Bokidz, Luxury Health, Trade Off, Qlines, Essaly, 2rbly, 2rbly - Delivery, and 2rbly Partner.
+
+A project can have one image or several. Several images become a carousel. Store buttons show only when a link exists.
+
+## Services
+
+Flutter Development, Android Development, and AI Development.
 
 ## Features
 
-- ⚡ **Instant loading screen** — animated splash rendered before Flutter starts
-  (see `web/index.html`), faded out automatically on first frame.
-- 🌗 **Dark / light theme toggle** — defaults to dark, remembers nothing yet
-  (stateless toggle), adapts the browser theme-color too.
-- 📱 **Fully responsive** — mobile, tablet and desktop layouts.
-- 🎯 **Sections** — Hero, About, Services, Work (projects), Contact, Footer.
-- ✨ Smooth scroll-triggered reveal animations and hover effects.
-- 🔎 **SEO + social meta** tags and PWA manifest.
+- HTML splash while Flutter starts
+- Phone, tablet, and desktop layouts
+- Dark and light theme
+- Project hover on desktop, and a details dialog on phone
+- Local WebP images
+- One Telegram visit message per browser tab
 
 ## Project structure
 
 ```
 lib/
-├── main.dart                 # App entry, theme state, splash removal
-├── core/                     # Theme, breakpoints, links, splash
-├── domain/entities/          # Project and other content models
-├── data/
-│   └── portfolio_data.dart   # ALL content lives here — edit this file
-├── widgets/                  # Shared UI used by more than one section
-├── sections/                 # One folder per section, with its own widgets
-└── screens/
-    └── home_screen.dart      # Layout + scroll navigation
+├── main.dart
+├── core/                     # Theme, colors, splash, visit alert
+├── domain/entities/
+├── data/portfolio_data.dart  # All personal content
+├── widgets/                  # Shared UI
+├── sections/                 # One folder per section
+└── screens/home_screen.dart
 ```
 
-## Editing your content
+Each section folder holds the section file and a `widgets/` folder for its smaller pieces.
 
-Everything personal (name, bio, projects, services, social links, CV link)
-is in **`lib/data/portfolio_data.dart`**. Update values there.
+## Edit content
 
-Project screenshots are optimized WebP files under `assets/projects/<name>/`.
-A project can list one image or several; several become a carousel. Icons
-live in `assets/icons/`, and the profile photo is `assets/images/profile.jpeg`.
+Change the name, bio, skills, services, projects, and links in `lib/data/portfolio_data.dart`.
 
-## Run locally
+- Screenshots: `assets/projects/<name>/`
+- Icons: `assets/icons/`
+- Profile photo: `assets/images/profile.jpeg`
+
+## Run
 
 ```bash
 flutter pub get
 flutter run -d chrome
 ```
 
-Opening the site sends one Telegram message per browser tab: country, city,
-time in Egypt, and device. The bot token and chat id live in
-`lib/core/visit/telegram_secrets.dart`, which is gitignored.
-`telegram_secrets.example.dart` is the empty template. Refreshing the same
-tab does not send another message.
+Needs Flutter SDK `^3.12.1`.
 
-The token stays out of git. A web build still contains it, because the page
-itself sends the message. Use the regular web build for these alerts. The
-WebAssembly build does not send them.
+Visit alerts use `lib/core/visit/telegram_secrets.dart`. That file is gitignored. Copy `telegram_secrets.example.dart` if you need to recreate it. The same browser tab does not send a second message.
 
-## Build for production
+A normal web build still contains the token, because the page sends the message. The WebAssembly build does not send alerts.
+
+## Build
 
 ```bash
 flutter build web --release
 ```
 
-For even better runtime performance you can try the WebAssembly renderer:
-
-```bash
-flutter build web --release --wasm
-```
-
-Output is generated in `build/web/`, ready to deploy to Firebase Hosting,
-GitHub Pages, Netlify, Vercel, etc.
-
-## Deploy to Firebase (same as the old site)
+Output is in `build/web/`.
 
 ```bash
 firebase deploy
 ```
+
+## Links
+
+- GitHub: https://github.com/Moatamed8
+- LinkedIn: https://www.linkedin.com/in/moatamed-wageh/
+- WhatsApp: https://api.whatsapp.com/send?phone=201288584664
+- CV: https://drive.google.com/drive/folders/11W6E9Ng2HkRONMFeNT1UN46BmUJEmrgm?usp=sharing

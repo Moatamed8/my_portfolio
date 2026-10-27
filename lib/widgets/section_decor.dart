@@ -14,27 +14,11 @@ class BackgroundDecor extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            top: -120,
-            right: -100,
+            top: -180,
+            right: -120,
             child: _Blob(
-              color: AppColors.accent.withValues(alpha: isDark ? 0.22 : 0.16),
-              size: 420,
-            ),
-          ),
-          Positioned(
-            top: 500,
-            left: -140,
-            child: _Blob(
-              color: AppColors.accent2.withValues(alpha: isDark ? 0.16 : 0.12),
-              size: 460,
-            ),
-          ),
-          Positioned(
-            bottom: -120,
-            right: -80,
-            child: _Blob(
-              color: AppColors.accent3.withValues(alpha: isDark ? 0.12 : 0.10),
-              size: 380,
+              color: AppColors.accent.withValues(alpha: isDark ? 0.14 : 0.18),
+              size: 520,
             ),
           ),
         ],

@@ -41,7 +41,7 @@ class _HireButtonState extends State<HireButton> {
           child: const Text(
             'Hire Me',
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.onAccent,
               fontWeight: FontWeight.w600,
               fontSize: 14,
             ),

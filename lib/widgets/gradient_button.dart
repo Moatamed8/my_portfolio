@@ -36,11 +36,13 @@ class _GradientButtonState extends State<GradientButton> {
           padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 15),
           decoration: BoxDecoration(
             gradient: AppColors.brandGradient,
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color: AppColors.accent.withValues(alpha: _hover ? 0.45 : 0.25),
-                blurRadius: _hover ? 28 : 16,
+                color: AppColors.accent2.withValues(
+                  alpha: _hover ? 0.35 : 0.18,
+                ),
+                blurRadius: _hover ? 22 : 12,
                 offset: const Offset(0, 8),
               ),
             ],
@@ -49,13 +51,13 @@ class _GradientButtonState extends State<GradientButton> {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (widget.icon != null) ...[
-                Icon(widget.icon, color: Colors.white, size: 19),
+                Icon(widget.icon, color: AppColors.onAccent, size: 19),
                 const SizedBox(width: 9),
               ],
               Text(
                 widget.label,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: AppColors.onAccent,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),

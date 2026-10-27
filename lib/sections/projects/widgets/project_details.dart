@@ -64,11 +64,7 @@ class ProjectDetailsBody extends StatelessWidget {
         SizedBox(height: compact ? 10 : 14),
         Row(
           children: [
-            const Icon(
-              Icons.download_rounded,
-              size: 16,
-              color: AppColors.accent,
-            ),
+            Icon(Icons.download_rounded, size: 16, color: context.gold),
             const SizedBox(width: 6),
             Flexible(
               child: Text(
@@ -105,11 +101,7 @@ class ProjectHoverActions extends StatelessWidget {
         const SizedBox(height: 14),
         Row(
           children: [
-            const Icon(
-              Icons.download_rounded,
-              size: 16,
-              color: AppColors.accent,
-            ),
+            Icon(Icons.download_rounded, size: 16, color: context.gold),
             const SizedBox(width: 6),
             Flexible(
               child: Text(

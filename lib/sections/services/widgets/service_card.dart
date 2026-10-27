@@ -57,7 +57,7 @@ class _ServiceCardState extends State<ServiceCard> {
               child: SvgPicture.asset(
                 widget.service.icon,
                 colorFilter: const ColorFilter.mode(
-                  Colors.white,
+                  AppColors.onAccent,
                   BlendMode.srcIn,
                 ),
               ),
@@ -94,10 +94,10 @@ class _ServiceCardState extends State<ServiceCard> {
                       ),
                       child: Text(
                         t,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.accent,
+                          color: context.gold,
                         ),
                       ),
                     ),

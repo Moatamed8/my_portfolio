@@ -23,7 +23,7 @@ class Logo extends StatelessWidget {
           child: const Text(
             'MW',
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.onAccent,
               fontFamily: AppTheme.display,
               fontWeight: FontWeight.w700,
               fontSize: 15,

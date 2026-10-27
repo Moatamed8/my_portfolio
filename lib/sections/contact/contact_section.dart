@@ -35,15 +35,11 @@ class ContactSection extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(isMobile ? 28 : 48),
               decoration: BoxDecoration(
-                gradient: AppColors.brandGradient,
+                color: const Color(0xFF16130F),
                 borderRadius: BorderRadius.circular(28),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.accent.withValues(alpha: 0.35),
-                    blurRadius: 50,
-                    offset: const Offset(0, 24),
-                  ),
-                ],
+                border: Border.all(
+                  color: AppColors.accent.withValues(alpha: 0.45),
+                ),
               ),
               child: Column(
                 children: [

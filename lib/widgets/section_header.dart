@@ -28,17 +28,17 @@ class SectionHeader extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
           decoration: BoxDecoration(
-            color: AppColors.accent.withValues(alpha: 0.12),
+            color: context.gold.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(999),
-            border: Border.all(color: AppColors.accent.withValues(alpha: 0.3)),
+            border: Border.all(color: context.gold.withValues(alpha: 0.35)),
           ),
           child: Text(
             eyebrow.toUpperCase(),
-            style: const TextStyle(
-              color: AppColors.accent,
+            style: TextStyle(
+              color: context.gold,
               fontWeight: FontWeight.w600,
               fontSize: 12,
-              letterSpacing: 2,
+              letterSpacing: 2.4,
             ),
           ),
         ),
@@ -48,7 +48,8 @@ class SectionHeader extends StatelessWidget {
           textAlign: centered ? TextAlign.center : TextAlign.start,
           style: TextStyle(
             fontFamily: AppTheme.display,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.4,
             height: 1.1,
             fontSize: Responsive.value(context, mobile: 30.0, desktop: 42.0),
             color: context.textColor,
